@@ -1,0 +1,82 @@
+
+.backgroundColorCenter {
+    -fx-background-color: linear-gradient(to right bottom, #00a6ff, #db39d9);
+}
+.backgroundColorLeft {
+    -fx-background-color: linear-gradient(to right, #00a6ff, #054bf0);
+}
+.loginBtn{
+    -fx-background-color: #f59d95;
+    -fx-background-radius: 30 0 0 30;
+}
+.loginBtn:hover{
+    -fx-background-color: #f28177;
+    -fx-background-radius: 30 0 0 30;
+}
+.loginBtn:pressed{
+    -fx-background-color: #f24e3f;
+    -fx-background-radius: 30 0 0 30;
+}
+.facultyLoginBackground{
+    -fx-background-color: linear-gradient(to right bottom, #adf7b0,  #999191);
+}
+.studentLogin{
+    -fx-background-color: linear-gradient(to right bottom, #c6cbf7,  #999191);
+}
+.studentLoginBtn{
+    -fx-background-color: linear-gradient(to top, #048bbd, #4ad8e8);
+}
+.studentLoginBtn:hover{
+    -fx-background-color:  #14c0ff;
+}
+.studentLoginBtn:pressed{
+    -fx-background-color:  #0278a3;
+}
+.facultyLogin{
+    -fx-background-color: linear-gradient(to left bottom, #4df736, #e1f52f);
+}
+.topbar{
+    -fx-background-color: #afb3b0;
+}
+.buttonClose{
+    -fx-background-color:  #afb3b0;
+}
+
+.buttonClose:hover{
+    -fx-background-color: #ff0000;
+}
+.backgroundstudentlogin{
+    -fx-background-color: linear-gradient(to right bottom, #c4f5f4, #adb7ff);
+}
+.backgroundstudentlogin1{
+    -fx-background-color: linear-gradient(to left , #48bcfa , #c4f5f4);
+}
+.studentBtn{
+    -fx-background-color: #27dbd2;
+    
+}
+.studentBtn:hover{
+    -fx-background-color: #22a8a2;
+    
+}
+.facultyLoginBtn{
+    -fx-background-color: linear-gradient(to top, #23b516, #52eb44);
+}
+.FacultyMainpage{
+    -fx-background-color: linear-gradient(to left, #25c433, #85f57f);
+}
+.FacultyMainPageLeft{
+    -fx-background-color: linear-gradient(to right, #85f57f, #25c433);
+}
+.facultyBtn{
+    -fx-background-color: #eaf573;
+    -fx-background-radius: 30 0 0 30;
+}
+.facultyBtn:hover{
+    -fx-background-color: #f0fa84;
+    -fx-background-radius: 30 0 0 30;
+}
+.facultyBtn:pressed{
+    -fx-background-color: #bdc93a;
+    -fx-background-radius: 30 0 0 30;
+}
