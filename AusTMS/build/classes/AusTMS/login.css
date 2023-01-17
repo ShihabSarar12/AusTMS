@@ -79,3 +79,7 @@
     -fx-background-color: #bdc93a;
     -fx-background-radius: 30 0 0 30;
 }
+.facultyNoticeFields{
+    -fx-background-color: linear-gradient(to top, #71e85f, #a5ed9a);
+    -fx-background-radius: 15 15 15 15;
+}
