@@ -41,7 +41,7 @@ public class FacultyNoticeController implements Initializable {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(MainPageFacultyController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }///////////////NEED TO WORK ON APPENDING ITEMS IN TXT FILE.
+    }
     @FXML
     public void PostNotice(ActionEvent event){
         String notice = noticeTextArea.getText();
