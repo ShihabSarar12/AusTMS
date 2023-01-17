@@ -14,7 +14,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
@@ -29,6 +33,9 @@ public class MainPageFacultyController implements Initializable {
     private double x = 0,y = 0;
     @FXML
     private AnchorPane anchorPane;
+    private Parent root;
+    private Stage stageFac;
+    private Scene scene;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -61,5 +68,18 @@ public class MainPageFacultyController implements Initializable {
     public void Pressed(MouseEvent event) {
         x = event.getSceneX();
         y = event.getSceneY();
+    }
+    @FXML
+    void NavToLoginPage(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+        try {
+            root = loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(MainPageFacultyController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        stageFac = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stageFac.setScene(scene);
+        stageFac.show();
     }
 }

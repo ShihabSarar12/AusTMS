@@ -54,7 +54,6 @@ public class MainPageStudentController implements Initializable {
         listView.getItems().add("Shihab: "+message);
         chatTxtField.setText("");
     }
-    
     @FXML
     public void Close(ActionEvent event) {
         System.exit(0);
@@ -66,11 +65,22 @@ public class MainPageStudentController implements Initializable {
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
     }
-
     @FXML
     public void Pressed(MouseEvent event) {
         x = event.getSceneX();
         y = event.getSceneY();
     }
-    
+    @FXML
+    void NavToLoginPage(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            root = loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(MainPageStudentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
+
 package AusTMS;
 
 import java.io.BufferedWriter;
@@ -49,11 +46,14 @@ public class FacultyNoticeController implements Initializable {
     public void PostNotice(ActionEvent event){
         String notice = noticeTextArea.getText();
         try {
-            FileWriter fWriter = new FileWriter(FXMain.noticePath);
+            FileWriter fWriter = new FileWriter(FXMain.noticePath,true);
             BufferedWriter bWriter = new BufferedWriter(fWriter);
             PrintWriter pWriter = new PrintWriter(bWriter);
-            pWriter.write(notice+"\n");
+            pWriter.write(notice);
+            pWriter.write("\n");
             pWriter.close();
+            bWriter.close();
+            fWriter.close();
             System.out.println("File appended successfully!!");
         } catch (IOException ex) {
             Logger.getLogger(MainPageFacultyController.class.getName()).log(Level.SEVERE, null, ex);
