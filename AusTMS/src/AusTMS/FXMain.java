@@ -39,7 +39,6 @@ public class FXMain extends Application {
             Parent root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.initStyle(StageStyle.UNDECORATED);
-            primaryStage.setTitle("AusTMS");
             root.setOnMousePressed(mouseEvent ->{
             x = mouseEvent.getSceneX();
             y = mouseEvent.getSceneY();
