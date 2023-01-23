@@ -18,7 +18,7 @@
             <Pane prefHeight="577.0" prefWidth="169.0" styleClass="FacultyMainPageLeft" stylesheets="@login.css" BorderPane.alignment="CENTER">
                <children>
                   <Button layoutX="18.0" layoutY="147.0" mnemonicParsing="false" onAction="#NoticeFaculty" prefHeight="43.0" prefWidth="151.0" styleClass="facultyBtn" stylesheets="@login.css" text="Notice" />
-                  <Button layoutX="18.0" layoutY="204.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="152.0" styleClass="facultyBtn" stylesheets="@login.css" text="Courses" />
+                  <Button layoutX="18.0" layoutY="204.0" mnemonicParsing="false" onAction="#Course" prefHeight="43.0" prefWidth="152.0" styleClass="facultyBtn" stylesheets="@login.css" text="Courses" />
                   <Line endX="62.0" endY="564.0" layoutX="107.0" layoutY="14.0" startX="62.0" startY="-14.0" />
                   <Button layoutX="18.0" layoutY="95.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="150.0" styleClass="facultyBtn" stylesheets="@login.css" text="Routine" />
                   <Button layoutX="18.0" layoutY="264.0" mnemonicParsing="false" onAction="#ChatSystem" prefHeight="43.0" prefWidth="151.0" styleClass="facultyBtn" text="Chat" />

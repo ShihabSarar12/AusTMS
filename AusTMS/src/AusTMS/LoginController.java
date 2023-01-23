@@ -47,7 +47,7 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    void StudentLogin(ActionEvent event) {
+    void StudentLogin(ActionEvent event){
         System.out.println("Student Login Clicked");
         FxmlLoader loader = new FxmlLoader();
         Pane view = loader.getPage("StudentLogin");

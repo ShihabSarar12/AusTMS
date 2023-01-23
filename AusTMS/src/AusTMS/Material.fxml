@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="601.0" styleClass="CourseBackground1" stylesheets="@login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.CourseController">
+   <children>
+      <Pane layoutX="11.0" layoutY="5.0" prefHeight="409.0" prefWidth="573.0" style="-fx-background-color: #787371;">
+         <children>
+            <Button layoutX="40.0" layoutY="30.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 10;" styleClass="MaterialBtn" stylesheets="@login.css" text="CSE 2100">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="40.0" layoutY="97.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 10;" styleClass="MaterialBtn" stylesheets="@login.css" text="CSE 2103" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="40.0" layoutY="173.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 10;" styleClass="MaterialBtn" stylesheets="@login.css" text="CSE 2104">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="40.0" layoutY="247.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 10;" styleClass="MaterialBtn" stylesheets="@login.css" text="CSE 2105">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="40.0" layoutY="320.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 10;" styleClass="MaterialBtn" stylesheets="@login.css" text="CSE 2106">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="355.0" layoutY="30.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 10;" styleClass="MaterialBtn" stylesheets="@login.css" text="EEE 2142">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="355.0" layoutY="97.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 10;" styleClass="MaterialBtn" stylesheets="@login.css" text="EEE 2141">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="355.0" layoutY="173.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 10;" styleClass="MaterialBtn" stylesheets="@login.css" text="MATH 2101">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="355.0" layoutY="247.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" style="-fx-background-radius: 10;" styleClass="MaterialBtn" stylesheets="@login.css" text="HUM 2109">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <ImageView fitHeight="168.0" fitWidth="412.0" layoutX="102.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

@@ -34,7 +34,7 @@ public class MainPageFacultyController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
     private Parent root;
-    private Stage stageFac;
+    private Stage stage;
     private Scene scene;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -70,16 +70,17 @@ public class MainPageFacultyController implements Initializable {
         y = event.getSceneY();
     }
     @FXML
-    void NavToLoginPage(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+    public void Course(ActionEvent event) {
+          System.out.println("Inside course transition");
         try {
-            root = loader.load();
-        } catch (IOException ex) {
-            Logger.getLogger(MainPageFacultyController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        stageFac = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stageFac.setScene(scene);
-        stageFac.show();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Course.fxml"));
+                root = loader.load();
+            } catch (IOException ex) {
+                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
     }
 }

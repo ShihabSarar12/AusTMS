@@ -57,7 +57,6 @@ public class MainPageStudentController implements Initializable {
     @FXML
     public void Close(ActionEvent event) {
         System.exit(0);
-        
     }
     @FXML
     public void Dragged(MouseEvent event) {
@@ -71,16 +70,17 @@ public class MainPageStudentController implements Initializable {
         y = event.getSceneY();
     }
     @FXML
-    void NavToLoginPage(ActionEvent event) {
+    public void Course(ActionEvent event) {
+          System.out.println("Inside course transition");
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
-            root = loader.load();
-        } catch (IOException ex) {
-            Logger.getLogger(MainPageStudentController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Course.fxml"));
+                root = loader.load();
+            } catch (IOException ex) {
+                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
     }
 }

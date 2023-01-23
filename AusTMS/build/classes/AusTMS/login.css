@@ -1,9 +1,9 @@
 
 .backgroundColorCenter {
-    -fx-background-color: linear-gradient(to right bottom, #00a6ff, #db39d9);
+    -fx-background-color: linear-gradient(to right bottom, #66c1f2, #ed80ec);
 }
 .backgroundColorLeft {
-    -fx-background-color: linear-gradient(to right, #00a6ff, #054bf0);
+    -fx-background-color: linear-gradient(to right, #66c1f2, #5d85e3);
 }
 .loginBtn{
     -fx-background-color: #f59d95;
@@ -18,7 +18,7 @@
     -fx-background-radius: 30 0 0 30;
 }
 .facultyLoginBackground{
-    -fx-background-color: linear-gradient(to right bottom, #adf7b0,  #999191);
+    -fx-background-color: linear-gradient(to right bottom, #baf5bc,  #999191);
 }
 .studentLogin{
     -fx-background-color: linear-gradient(to right bottom, #c6cbf7,  #999191);
@@ -61,11 +61,17 @@
 .facultyLoginBtn{
     -fx-background-color: linear-gradient(to top, #23b516, #52eb44);
 }
+.facultyLoginBtn:hover{
+    -fx-background-color: #55de49;
+}
+.facultyLoginBtn:pressed{
+    -fx-background-color: #17990c;
+}
 .FacultyMainpage{
-    -fx-background-color: linear-gradient(to left, #25c433, #85f57f);
+    -fx-background-color: linear-gradient(to left, #55bd5d, #a5eda1);
 }
 .FacultyMainPageLeft{
-    -fx-background-color: linear-gradient(to right, #85f57f, #25c433);
+    -fx-background-color: linear-gradient(to right, #99f294, #4cc256);
 }
 .facultyBtn{
     -fx-background-color: #eaf573;
@@ -85,4 +91,22 @@
 }
 .introBackground{
     -fx-background-color: linear-gradient(to left bottom, #97dea4, #b4c1f0);
+}
+.CourseBackground{
+    -fx-background-color: linear-gradient(to left,#c7c6c5 , #ebe9e8 );
+}
+.CourseBackground1{
+    -fx-background-color: linear-gradient(to right bottom, #7a777a ,#f7bef4 );
+}
+.MaterialBtn{
+    -fx-background-color: #fcc838;
+    
+}
+.MaterialBtn:hover{
+    -fx-background-color: #fcdc83;
+   
+}
+.MaterialBtn:pressed{
+    -fx-background-color: #fcba03;
+    
 }

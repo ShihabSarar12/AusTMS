@@ -3,13 +3,15 @@ package AusTMS;
 
 import java.io.IOException;
 import java.net.URL;
-
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.animation.FadeTransition;
 import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
 import javafx.animation.ScaleTransition;
+import javafx.animation.Timeline;
 import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,6 +22,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -31,7 +36,9 @@ public class IntroController implements Initializable {
     private Parent root;
     private Scene scene;
     private Stage stage;
-    
+    @FXML
+    private StackPane mainPane;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         TranslateTransition translate = new TranslateTransition(Duration.millis(1250),txt);
