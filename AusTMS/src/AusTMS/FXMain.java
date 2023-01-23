@@ -19,6 +19,8 @@ public class FXMain extends Application {
     public static String noticePath = "C:/Users/shiha/Downloads/AusTMS (2)/AusTMS/src/AusTMS/TxtFiles/notice.txt";
     double x = 0, y = 0;
     public static Stage stage;
+    public static double width = 750;
+    public static double height = 600;
     @Override
     public void start(Stage primaryStage) {
         File noticeFile = new File(noticePath);
@@ -34,7 +36,7 @@ public class FXMain extends Application {
             System.out.println("notice.txt already exists!!");
         }
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Intro.fxml"));
             
             Parent root = loader.load();
             Scene scene = new Scene(root);

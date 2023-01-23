@@ -83,3 +83,6 @@
     -fx-background-color: linear-gradient(to top, #71e85f, #a5ed9a);
     -fx-background-radius: 15 15 15 15;
 }
+.introBackground{
+    -fx-background-color: linear-gradient(to left bottom, #97dea4, #b4c1f0);
+}
