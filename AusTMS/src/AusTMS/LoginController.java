@@ -17,6 +17,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -33,6 +35,10 @@ public class LoginController implements Initializable {
     private Parent root;
     private Scene scene;
     private Stage stage;
+    double x = 0, y = 0;
+    @FXML
+    private AnchorPane anchorPane;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          
@@ -52,6 +58,17 @@ public class LoginController implements Initializable {
         FxmlLoader loader = new FxmlLoader();
         Pane view = loader.getPage("StudentLogin");
         mainPane.setCenter(view);
+    }
+    @FXML
+    public void Dragged(MouseEvent event) {
+        Stage stage = (Stage)anchorPane.getScene().getWindow();
+        stage.setY(event.getScreenY() - y);
+        stage.setX(event.getScreenX() - x);
+    }
+    @FXML
+    public void Pressed(MouseEvent event) {
+        x = event.getSceneX();
+        y = event.getSceneY();
     }
     @FXML
     void StudentLoggedIn(ActionEvent event) {
