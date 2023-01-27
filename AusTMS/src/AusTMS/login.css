@@ -1,45 +1,61 @@
 
 .backgroundColorCenter {
-    -fx-background-color: linear-gradient(to right bottom, #66c1f2, #ed80ec);
+    -fx-background-color: #242323;
 }
 .backgroundColorLeft {
-    -fx-background-color: linear-gradient(to right, #66c1f2, #5d85e3);
+    -fx-background-color: linear-gradient(to top, #242323, #4d4b4b);
 }
 .loginBtn{
-    -fx-background-color: #f59d95;
-    -fx-background-radius: 30 0 0 30;
+    -fx-background-color: #ff8531;
+    -fx-border-radius: 30 30 30 30;
+    -fx-border-color: #010005;
+    -fx-background-radius: 30 30 30 30;
 }
 .loginBtn:hover{
-    -fx-background-color: #f28177;
-    -fx-background-radius: 30 0 0 30;
+    -fx-background-color: #ffa600;
+    -fx-border-radius: 15 15 15 15;
+    -fx-border-color: #010005;
+    -fx-background-radius: 15 15 15 15;
 }
 .loginBtn:pressed{
-    -fx-background-color: #f24e3f;
-    -fx-background-radius: 30 0 0 30;
+    -fx-background-color: #ff6361;
+    -fx-border-radius: 15 15 15 15;
+    -fx-border-color: #010005;
+    -fx-background-radius: 15 15 15 15;
 }
 .facultyLoginBackground{
     -fx-background-color: linear-gradient(to right bottom, #baf5bc,  #999191);
 }
 .studentLogin{
-    -fx-background-color: linear-gradient(to right bottom, #c6cbf7,  #999191);
+    -fx-background-color: #242323;
+    -fx-background-border : 0 15 15 0;
 }
 .studentLoginBtn{
-    -fx-background-color: linear-gradient(to top, #048bbd, #4ad8e8);
+    -fx-background-color: #ff8531;
+    -fx-border-radius: 30 30 30 30;
+    -fx-border-color: #010005;
+    -fx-background-radius : 30 30 30 30;
 }
 .studentLoginBtn:hover{
-    -fx-background-color:  #14c0ff;
+    -fx-background-color:  #ffa600;
+    -fx-border-radius: 15 15 15 15;
+    -fx-border-color: #010005;
+    -fx-background-radius : 15 15 15 15;
 }
 .studentLoginBtn:pressed{
-    -fx-background-color:  #0278a3;
+    -fx-background-color:  #ff6361;
+    -fx-border-radius: 15 15 15 15;
+    -fx-border-color: #010005;
+    -fx-background-radius : 15 15 15 15;
 }
 .facultyLogin{
     -fx-background-color: linear-gradient(to left bottom, #4df736, #e1f52f);
 }
 .topbar{
-    -fx-background-color: #afb3b0;
+    -fx-background-color: #ff8531;
 }
 .buttonClose{
-    -fx-background-color:  #afb3b0;
+    -fx-background-color:  #ff8531;
 }
 
 .buttonClose:hover{
@@ -90,7 +106,7 @@
     -fx-background-radius: 15 15 15 15;
 }
 .introBackground{
-    -fx-background-color: linear-gradient(to left bottom, #97dea4, #b4c1f0);
+    -fx-background-color: #242323;
 }
 .CourseBackground{
     -fx-background-color: linear-gradient(to left,#c7c6c5 , #ebe9e8 );

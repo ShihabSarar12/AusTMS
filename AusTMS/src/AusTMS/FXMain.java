@@ -36,7 +36,7 @@ public class FXMain extends Application {
             System.out.println("notice.txt already exists!!");
         }
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Intro.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("IntroMedia.fxml"));
             
             Parent root = loader.load();
             Scene scene = new Scene(root);
