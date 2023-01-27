@@ -38,7 +38,8 @@ public class IntroController implements Initializable {
     private Stage stage;
     @FXML
     private StackPane mainPane;
-
+    @FXML
+    private AnchorPane anchorPane;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         TranslateTransition translate = new TranslateTransition(Duration.millis(1250),txt);
@@ -69,10 +70,17 @@ public class IntroController implements Initializable {
         }catch(IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        stage = (Stage)txt.getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        scene = txt.getScene();
+        root.translateXProperty().set(scene.getWidth());
+        mainPane.getChildren().add(root);
+        Timeline timeline = new Timeline();
+        KeyValue keyValue = new KeyValue(root.translateXProperty(),0,Interpolator.EASE_IN);
+        KeyFrame keyFrame = new KeyFrame(Duration.seconds(1),keyValue);
+        timeline.getKeyFrames().add(keyFrame);
+        timeline.setOnFinished(event->{
+            mainPane.getChildren().remove(anchorPane);
+        });
+        timeline.play();
     }
     
 }

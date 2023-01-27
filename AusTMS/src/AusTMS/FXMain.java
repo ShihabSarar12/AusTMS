@@ -1,4 +1,3 @@
-
 package AusTMS;
 
 import java.io.File;
@@ -18,7 +17,6 @@ import javafx.stage.StageStyle;
 public class FXMain extends Application {
     public static String noticePath = "C:/Users/shiha/Downloads/AusTMS (2)/AusTMS/src/AusTMS/TxtFiles/notice.txt";
     double x = 0, y = 0;
-    public static Stage stage;
     public static double width = 750;
     public static double height = 600;
     @Override
@@ -36,7 +34,7 @@ public class FXMain extends Application {
             System.out.println("notice.txt already exists!!");
         }
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("IntroMedia.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Intro.fxml"));
             
             Parent root = loader.load();
             Scene scene = new Scene(root);
@@ -49,7 +47,6 @@ public class FXMain extends Application {
             primaryStage.setX(mouseEvent.getScreenX() - x);
             primaryStage.setY(mouseEvent.getScreenY() - y);
             });
-            stage = primaryStage;
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException ex) {

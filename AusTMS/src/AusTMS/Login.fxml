@@ -38,8 +38,8 @@
       </BorderPane>
       <AnchorPane layoutY="-2.0" prefHeight="29.0" prefWidth="760.0">
          <children>
-            <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="760.0" styleClass="topbar" stylesheets="@login.css" />
-            <Button contentDisplay="RIGHT" layoutX="730.0" layoutY="1.0" mnemonicParsing="false" onAction="#Close" prefHeight="10.0" prefWidth="30.0" styleClass="buttonClose" stylesheets="@login.css" text="X" textFill="WHITE">
+            <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="734.0" styleClass="topbar" stylesheets="@login.css" />
+            <Button contentDisplay="RIGHT" layoutX="731.0" layoutY="1.0" mnemonicParsing="false" onAction="#Close" prefHeight="10.0" prefWidth="30.0" styleClass="buttonClose" stylesheets="@login.css" text="X" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>

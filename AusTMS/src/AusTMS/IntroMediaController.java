@@ -24,7 +24,7 @@ public class IntroMediaController implements Initializable {
     private MediaView mediaViewer;
     private Media media;
     private MediaPlayer mediaPlayer;
-    public static String mediaPath = "C:/Users/shiha/Downloads/AusTMS (2)/AusTMS/src/AusTMS/Video/media.mp4";
+    
     private Parent root;
     private Stage stage;
     private Scene scene;
@@ -32,17 +32,7 @@ public class IntroMediaController implements Initializable {
     private AnchorPane introPane;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        File file = new File(mediaPath);
-        try {
-            String urlString = file.toURI().toURL().toString();
-            Media media = new Media(urlString);
-            MediaPlayer mediaPlayer = new MediaPlayer(media);
-            mediaPlayer.setAutoPlay(true);
-            mediaViewer = new MediaView(mediaPlayer);
-            System.out.println("Playing media");
-        } catch (MalformedURLException ex) {
-            Logger.getLogger(IntroMediaController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        
     }
     private void sceneChange(){
         try{
@@ -61,18 +51,17 @@ public class IntroMediaController implements Initializable {
 File file=new File("C:\\Users\\Lenovo\\Downloads\\media.mp4");
          String urlString;
         try {
-            
             urlString = file.toURI().toURL().toString();
-             Media media=new Media(urlString);
-             MediaPlayer mediaPlayer=new MediaPlayer(media);
-             mediaPlayer.setAutoPlay(true);
-             System.out.println("Playing media");
-             MediaView mediaView=new MediaView(mediaPlayer);
-             VBox root=new VBox();
-             root.setAlignment(Pos.CENTER);
-             root.getChildren().add(mediaView);
-             primaryStage.setScene(new Scene(root,700,500));
-             primaryStage.show();
+            Media media=new Media(urlString);
+            MediaPlayer mediaPlayer=new MediaPlayer(media);
+            mediaPlayer.setAutoPlay(true);
+            System.out.println("Playing media");
+            MediaView mediaView=new MediaView(mediaPlayer);
+            VBox root=new VBox();
+            root.setAlignment(Pos.CENTER);
+            root.getChildren().add(mediaView);
+            primaryStage.setScene(new Scene(root,700,500));
+            primaryStage.show();
         } catch (MalformedURLException ex) {
             Logger.getLogger(MediaView.class.getName()).log(Level.SEVERE, null, ex);
         }
