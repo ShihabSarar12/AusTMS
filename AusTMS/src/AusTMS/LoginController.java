@@ -81,6 +81,7 @@ public class LoginController implements Initializable {
         System.out.println("Log In Clicked(Student)");
         String userId = txtField.getText();
         String password = passField.getText();
+        //LoginVerification.studentLoginVerify();
         if(userId.equals("Shihab")&&password.equals("12345")){
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("MainPageStudent.fxml"));
@@ -122,5 +123,17 @@ public class LoginController implements Initializable {
     public void Close(ActionEvent event){
         Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         stage.close();
+    }
+    public void sceneChange(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainPageStudent.fxml"));
+            root = loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        stage = (Stage)anchorPane.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
