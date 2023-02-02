@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="605.0" prefWidth="594.0" styleClass="backgroundColorCenter" stylesheets="@login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.CourseController">
+   <children>
+      <Pane layoutX="-7.0" layoutY="5.0" prefHeight="600.0" prefWidth="601.0" styleClass="backgroundColorCenter" stylesheets="@login.css">
+         <children>
+            <Button layoutX="39.0" layoutY="251.0" mnemonicParsing="false" onAction="#CSE2103TakeOnline" prefHeight="37.0" prefWidth="155.0" styleClass="loginBtn" stylesheets="@login.css" text="CSE 2103" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="213.0" layoutY="251.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" styleClass="loginBtn" stylesheets="@login.css" text="CSE 2104">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="393.0" layoutY="251.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" styleClass="loginBtn" stylesheets="@login.css" text="CSE 2105">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="40.0" layoutY="316.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" styleClass="loginBtn" stylesheets="@login.css" text="EEE 2141">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="213.0" layoutY="316.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" styleClass="loginBtn" stylesheets="@login.css" text="MATH 2101">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="393.0" layoutY="316.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" styleClass="loginBtn" stylesheets="@login.css" text="HUM 2109">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="386.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Online.png" />
+               </image>
+            </ImageView>
+            <Text fill="#fcfcfc" layoutX="48.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Before you sit for the exam, Make sure you are fully prepared and best of luck." wrappingWidth="504.13671875">
+               <font>
+                  <Font name="Berlin Sans FB" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

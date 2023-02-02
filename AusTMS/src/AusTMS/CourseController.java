@@ -27,25 +27,26 @@ public class CourseController implements Initializable {
     private Parent root;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     } 
       @FXML
     void Online(ActionEvent event) {
-
+        System.out.println("Inside Online");
+        FxmlLoader loader = new FxmlLoader();
+        Pane view = loader.getPage("Online");
+        mainPane.setCenter(view);
     }
 
     @FXML
     public void postMaterial(ActionEvent event) {
-         System.out.println("Inside material");
+        System.out.println("Inside material");
         FxmlLoader loader = new FxmlLoader();
         Pane view = loader.getPage("Material");
         mainPane.setCenter(view);
-         
     }
     @FXML
     public void Close(ActionEvent event) {
         System.exit(0);
-        
     }
     @FXML
     void backToPrev(ActionEvent event) {  
@@ -67,6 +68,19 @@ public class CourseController implements Initializable {
             root = loader.load();
         }catch(IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void CSE2103TakeOnline(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TakeOnline.fxml"));
+            root = loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(CourseController.class.getName()).log(Level.SEVERE, null, ex);
         }
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
