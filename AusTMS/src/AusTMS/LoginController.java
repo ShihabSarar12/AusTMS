@@ -81,7 +81,7 @@ public class LoginController implements Initializable {
         System.out.println("Log In Clicked(Student)");
         String userId = txtField.getText();
         String password = passField.getText();
-        //LoginVerification.studentLoginVerify();
+        //LoginVerification.studentLoginVerify(userId, password);
         if(userId.equals("Shihab")&&password.equals("12345")){
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("MainPageStudent.fxml"));

@@ -70,6 +70,13 @@ public class MainPageStudentController implements Initializable {
         y = event.getSceneY();
     }
     @FXML
+    void NoticeStudent(ActionEvent event) {
+        System.out.println("Inside Notice System");
+        FxmlLoader loader = new FxmlLoader();
+        Pane view = loader.getPage("StudentNotice");
+        mainPane.setCenter(view);
+    }
+    @FXML
     public void Course(ActionEvent event) {
           System.out.println("Inside course transition");
         try {

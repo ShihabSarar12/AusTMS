@@ -84,10 +84,10 @@
     -fx-background-color: #17990c;
 }
 .FacultyMainpage{
-    -fx-background-color: linear-gradient(to left, #55bd5d, #a5eda1);
+    -fx-background-color: #242323;
 }
 .FacultyMainPageLeft{
-    -fx-background-color: linear-gradient(to right, #99f294, #4cc256);
+    -fx-background-color: linear-gradient(to top, #242323, #4d4b4b);
 }
 .facultyBtn{
     -fx-background-color: #eaf573;
