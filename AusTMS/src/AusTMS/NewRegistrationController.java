@@ -3,6 +3,11 @@ package AusTMS;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,6 +19,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
@@ -23,6 +30,18 @@ public class NewRegistrationController implements Initializable {
     private Parent root;
     private Stage stage;
     private Scene scene;
+    @FXML
+    private Label matchLabel;
+    @FXML
+    private TextField IdTxt;
+    @FXML
+    private TextField conPasswordTxt;
+    @FXML
+    private TextField emailTxt;
+    @FXML
+    private TextField nameTxt;
+    @FXML
+    private TextField passwordTxt;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -46,7 +65,34 @@ public class NewRegistrationController implements Initializable {
     }
     @FXML
     void RegSaved(ActionEvent event) {
-        System.out.println("Information Saved");
+        String sql = "INSERT INTO student (Student_ID, Name, Email, Password) VALUES (?, ?, ?, ?)";
+        String uID = IdTxt.getText();
+        String name = nameTxt.getText();
+        String email = emailTxt.getText();
+        String password = passwordTxt.getText();
+        String conPassword = conPasswordTxt.getText();
+        if(password.equals(conPassword)){
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root",""); 
+                PreparedStatement statement = connect.prepareStatement(sql);
+                statement.setString(1,uID);
+                statement.setString(2, name);
+                statement.setString(3, email);
+                statement.setString(4, password);
+                int row = statement.executeUpdate();
+                System.out.println(row+" inserted successfully!");
+                System.out.println("Information Saved");
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(NewRegistrationController.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (SQLException ex) {
+                Logger.getLogger(NewRegistrationController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        else{
+            matchLabel.setText("Password doesn't match!");
+        }
+        
     }
     @FXML
     void BackToLogin(ActionEvent event) {

@@ -7,30 +7,31 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 public class LoginVerification {
-    public static void studentLoginVerify(String userID,String password){
+    public static boolean studentLoginVerify(String userID,String password){
         try {
-            //String sql = "SELECT * FROM data WHERE Name = Misha";
-             //Class.forName("com.mysql.cj.jdbc.Driver");
-             //Class.forName("com.mysql.jdbc.Driver");
-//             
-//            Driver driver = (Driver) driver_class.newInstance();
-//            DriverManager.registerDriver(driver);
-//            
-            //Connection connect = Database.connectDB();
-            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/student","root","shihabsarar");
-            String sql = "SELECT * FROM data";
-             //Class.forName("com.mysql.cj.jdbc.Driver");
-             Class.forName("com.mysql.cj.jdbc.Driver");
+            System.out.println("Field = "+userID);
+            System.out.println("Field = "+password);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root","");
+            PreparedStatement statement = connect.prepareStatement("select * from student where Student_ID= ? and Password= ?");
+            statement.setString(1, userID);
+            statement.setString(2, password);
+            ResultSet result = statement.executeQuery();
             System.out.println("Connection received!");
-            Statement statement = connect.createStatement();
             System.out.println("Statement created");
-            ResultSet result = statement.executeQuery(sql);
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginVerification.class.getName()).log(Level.SEVERE, null, ex);
+            if(result.next()){
+                return true;
+            }
+            else{
+                System.out.println("user name or password doesnt match");
+                return false;
+            }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(LoginVerification.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginVerification.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return false;
     }
     
 }
