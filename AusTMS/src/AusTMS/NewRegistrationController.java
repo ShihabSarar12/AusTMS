@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -35,13 +36,13 @@ public class NewRegistrationController implements Initializable {
     @FXML
     private TextField IdTxt;
     @FXML
-    private TextField conPasswordTxt;
+    private PasswordField conPasswordTxt;
     @FXML
     private TextField emailTxt;
     @FXML
     private TextField nameTxt;
     @FXML
-    private TextField passwordTxt;
+    private PasswordField passwordTxt;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         

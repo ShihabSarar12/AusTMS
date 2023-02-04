@@ -102,9 +102,12 @@ public class LoginController implements Initializable {
     @FXML
     void FacultyLoggedIn(ActionEvent event) {
         System.out.println("Log In Clicked(Faculty)");
+        boolean verified = false;
         String userId = txtField.getText();
         String password = passField.getText();
-        if(userId.equals("Turjo")&&password.equals("54321")){
+        verified = LoginVerification.facultyLoginVerify(userId, password);
+        System.out.println(verified);
+        if(verified){
             try {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("MainPageFaculty.fxml"));
                 root = loader.load();
@@ -115,8 +118,7 @@ public class LoginController implements Initializable {
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-        }
-        else{
+        }else{
             passLabel.setText("UserID and Password doesn't match!!");
         }
     }
