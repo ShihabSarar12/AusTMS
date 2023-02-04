@@ -138,6 +138,7 @@ public class LoginController implements Initializable {
     }
     @FXML
     void NewRegistration(ActionEvent event) {
+        System.out.println("Inside new Registration");
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("NewRegistration.fxml"));
             root = loader.load();
