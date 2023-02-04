@@ -23,7 +23,7 @@ public class LoginVerification {
                 return true;
             }
             else{
-                System.out.println("user name or password doesnt match");
+                System.out.println("User Name or Password doesnt match");
                 return false;
             }
         } catch (ClassNotFoundException ex) {

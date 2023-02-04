@@ -110,4 +110,17 @@ public class MainPageStudentController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    void goToEdit(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("InfrmEdit.fxml"));
+            root = loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(MainPageStudentController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

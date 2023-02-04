@@ -5,6 +5,18 @@
 .backgroundColorLeft {
     -fx-background-color: linear-gradient(to top, #242323, #4d4b4b);
 }
+.BackBtn{
+    -fx-background-color: #262323;
+    -fx-background-radius: 0 15 15 0;  
+}
+.BackBtn:hover{
+    -fx-background-color: #383636;
+    -fx-background-radius: 0 15 15 0;
+}
+.BackBtn:pressed{
+    -fx-background-color: #000000;
+    -fx-background-radius: 0 15 15 0;
+}
 .loginBtn{
     -fx-background-color: #ff8531;
     -fx-border-radius: 30 30 30 30;
