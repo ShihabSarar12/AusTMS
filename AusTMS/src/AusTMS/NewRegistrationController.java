@@ -61,4 +61,5 @@ public class NewRegistrationController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+   
 }

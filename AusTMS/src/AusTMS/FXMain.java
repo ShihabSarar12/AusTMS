@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 public class FXMain extends Application {
-    public static String noticePath = "C:/Users/shiha/Downloads/AusTMS (2)/AusTMS/src/AusTMS/TxtFiles/notice.txt";
+    public static String noticePath = "D:/AUST 2.1/SD LAB/AusTMS/AusTMS/src/AusTMS/TxtFiles/notice.txt";
     double x = 0, y = 0;
     public static double width = 750;
     public static double height = 600;
@@ -52,6 +52,11 @@ public class FXMain extends Application {
         } catch (IOException ex) {
             Logger.getLogger(FXMain.class.getName()).log(Level.SEVERE, null, ex);
         }
+        System.out.println("Turjo");
+    }
+    void set()
+    {
+        System.out.println("hello");
     }
     public static void main(String[] args) {
         launch(args);
