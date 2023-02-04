@@ -5,11 +5,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
 
-public class TakeOnlineController implements Initializable {
+public class ResultController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-    }    
-    
+    }
 }

@@ -18,7 +18,7 @@
                   <Button layoutX="10.0" layoutY="199.0" mnemonicParsing="false" onAction="#Course" prefHeight="43.0" prefWidth="151.0" styleClass="loginBtn" stylesheets="@login.css" text="Courses" />
                   <Button layoutX="11.0" layoutY="88.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="150.0" styleClass="loginBtn" stylesheets="@login.css" text="Routine" />
                   <Button layoutX="11.0" layoutY="253.0" mnemonicParsing="false" onAction="#ChatSystem" prefHeight="43.0" prefWidth="150.0" styleClass="loginBtn" stylesheets="@login.css" text="Chat" />
-                  <Button layoutX="11.0" layoutY="307.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="150.0" styleClass="loginBtn" stylesheets="@login.css" text="Result" />
+                  <Button layoutX="11.0" layoutY="307.0" mnemonicParsing="false" onAction="#Result" prefHeight="43.0" prefWidth="150.0" styleClass="loginBtn" stylesheets="@login.css" text="Result" />
                </children>
                <BorderPane.margin>
                   <Insets left="10.0" right="10.0" />

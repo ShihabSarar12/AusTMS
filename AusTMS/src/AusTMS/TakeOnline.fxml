@@ -2,11 +2,14 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="600.0" prefWidth="750.0" styleClass="backgroundColorCenter" stylesheets="@login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.LoginController">
+<AnchorPane fx:id="anchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="600.0" prefWidth="750.0" styleClass="backgroundColorCenter" stylesheets="@login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.TakeOnlineController">
    <children>
       <AnchorPane layoutY="-2.0" prefHeight="29.0" prefWidth="760.0">
          <children>
@@ -18,10 +21,22 @@
             </Button>
          </children>
       </AnchorPane>
-      <ScrollPane layoutY="21.0" prefHeight="577.0" prefWidth="761.0" style="-fx-background-color: transparent;">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-        </content>
+      <ScrollPane layoutY="27.0" prefHeight="572.0" prefWidth="761.0" style="-fx-background-color: transparent;">
+         <content>
+            <Pane fx:id="QuesPane" prefHeight="190.0" prefWidth="758.0">
+               <children>
+                  <Text fx:id="QuesText" layoutX="51.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="What is the name of our country?" wrappingWidth="679.13671875">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <RadioButton layoutX="51.0" layoutY="83.0" mnemonicParsing="false" text="RadioButton" />
+                  <RadioButton layoutX="51.0" layoutY="126.0" mnemonicParsing="false" text="RadioButton" />
+                  <RadioButton layoutX="363.0" layoutY="83.0" mnemonicParsing="false" text="RadioButton" />
+                  <RadioButton layoutX="363.0" layoutY="126.0" mnemonicParsing="false" text="RadioButton" />
+               </children>
+            </Pane>
+         </content>
       </ScrollPane>
    </children>
 </AnchorPane>

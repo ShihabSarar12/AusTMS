@@ -7,8 +7,9 @@
 
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.MainPageStudentController">
    <children>
-      <ListView fx:id="listView" layoutX="41.0" layoutY="25.0" prefHeight="465.0" prefWidth="478.0" />
-      <TextField fx:id="chatTxtField" layoutX="41.0" layoutY="490.0" prefHeight="34.0" prefWidth="478.0" />
-      <Button layoutX="444.0" layoutY="490.0" mnemonicParsing="false" onAction="#SendMessage" prefHeight="34.0" prefWidth="75.0" style="-fx-background-radius: 15;" styleClass="studentLoginBtn" stylesheets="@login.css" text="Send" />
+      <ListView fx:id="listView" layoutX="41.0" layoutY="53.0" prefHeight="444.0" prefWidth="478.0" style="-fx-background-radius: 15;" />
+      <TextField fx:id="chatTxtField" layoutX="41.0" layoutY="507.0" prefHeight="34.0" prefWidth="478.0" style="-fx-background-radius: 15;" />
+      <Button layoutX="444.0" layoutY="507.0" mnemonicParsing="false" onAction="#SendMessage" prefHeight="34.0" prefWidth="75.0" style="-fx-background-radius: 15;" styleClass="studentLoginBtn" stylesheets="@login.css" text="Send" />
+      <Button layoutX="41.0" layoutY="13.0" mnemonicParsing="false" onAction="#BackToMain" prefHeight="34.0" prefWidth="64.0" styleClass="loginBtn" stylesheets="@login.css" text="Back" />
    </children>
 </AnchorPane>

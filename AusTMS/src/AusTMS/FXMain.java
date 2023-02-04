@@ -31,7 +31,6 @@ public class FXMain extends Application {
             }
         }
         else{
-            System.out.println("Maisha ekta abul!!");
             System.out.println("notice.txt already exists!!");
         }
         try {
@@ -56,8 +55,5 @@ public class FXMain extends Application {
     }
     public static void main(String[] args) {
         launch(args);
-    }
-    public void Maisha(){
-        System.out.println("Maisha");
     }
 }

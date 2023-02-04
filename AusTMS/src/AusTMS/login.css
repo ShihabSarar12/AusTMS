@@ -23,6 +23,21 @@
     -fx-border-color: #010005;
     -fx-background-radius: 15 15 15 15;
 }
+.regBtn{
+    -fx-background-color: #262323;
+    -fx-background-radius: 15 15 15 15;  
+}
+.regBtn:hover{
+    -fx-background-color: #383636;
+    -fx-background-radius: 15 15 15 15;
+}
+.regBtn:pressed{
+    -fx-background-color: #000000;
+    -fx-background-radius: 15 15 15 15;
+}
+.backgroundColorReg{
+    -fx-background-color: #ff8531;
+}
 .facultyLoginBackground{
     -fx-background-color: linear-gradient(to right bottom, #baf5bc,  #999191);
 }

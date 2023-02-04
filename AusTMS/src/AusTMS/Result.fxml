@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.ResultController">
+   <children>
+      <Label layoutX="66.0" layoutY="109.0" text="CSE-2103 : " textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="148.0" text="CSE-2105 : " textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="182.0" text="EEE-2141 : " textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="216.0" text=" MATH-2101 :" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="253.0" text="HUM-2109 :" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="291.0" text="CSE-2104 : " textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="325.0" text="CSE-2100 : " textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="365.0" text="EEE-2142 :" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="401.0" text="CSE-2106 : " textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
+      <Text fill="WHITE" layoutX="375.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="375.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="375.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="375.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="375.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="375.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="375.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="375.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="375.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Label layoutX="68.0" layoutY="467.0" text="Total CGPA :  " textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="16.0" />
+         </font>
+      </Label>
+      <Line endX="405.0" layoutX="115.0" layoutY="453.0" startX="-100.0" stroke="#b5a9a9" />
+      <Text fill="WHITE" layoutX="375.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

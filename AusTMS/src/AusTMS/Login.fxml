@@ -29,6 +29,14 @@
                      <effect>
                         <DropShadow />
                      </effect></Button>
+                  <Button layoutX="9.0" layoutY="270.0" mnemonicParsing="false" onAction="#NewRegistration" prefHeight="42.0" prefWidth="160.0" styleClass="loginBtn" text="New Registration" textFill="#140000">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
                </children>
                <BorderPane.margin>
                   <Insets left="10.0" right="10.0" />
