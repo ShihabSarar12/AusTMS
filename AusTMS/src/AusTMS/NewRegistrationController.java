@@ -84,6 +84,7 @@ public class NewRegistrationController implements Initializable {
                 int row = statement.executeUpdate();
                 System.out.println(row+" inserted successfully!");
                 System.out.println("Information Saved");
+                matchLabel.setText("Saved successfully");
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(NewRegistrationController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (SQLException ex) {

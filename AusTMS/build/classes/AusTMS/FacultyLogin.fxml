@@ -12,20 +12,20 @@
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="545.0" styleClass="studentLogin" stylesheets="@login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.LoginController">
    <children>
       <TextField fx:id="txtField" layoutX="141.0" layoutY="257.0" prefHeight="25.0" prefWidth="264.0" style="-fx-background-radius: 15;" />
-      <PasswordField fx:id="passField" layoutX="141.0" layoutY="311.0" prefHeight="25.0" prefWidth="264.0" style="-fx-background-radius: 15;" />
-      <Label layoutX="32.0" layoutY="259.0" prefHeight="20.0" prefWidth="95.0" text="User ID" textFill="WHITE">
+      <PasswordField fx:id="passField" layoutX="141.0" layoutY="321.0" prefHeight="25.0" prefWidth="264.0" style="-fx-background-radius: 15;" />
+      <Label layoutX="141.0" layoutY="236.0" prefHeight="20.0" prefWidth="95.0" text="User ID" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="32.0" layoutY="313.0" prefHeight="20.0" prefWidth="95.0" text="Password" textFill="#fffafa">
+      <Label layoutX="141.0" layoutY="300.0" prefHeight="20.0" prefWidth="95.0" text="Password" textFill="#fffafa">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font>
       </Label>
       <Button layoutX="225.0" layoutY="375.0" mnemonicParsing="false" onAction="#FacultyLoggedIn" prefHeight="36.0" prefWidth="95.0" styleClass="studentLoginBtn" stylesheets="@login.css" text="Login">
          <font>
-            <Font name="Berlin Sans FB" size="14.0" />
+            <Font name="Berlin Sans FB" size="18.0" />
          </font></Button>
       <Label fx:id="passLabel" alignment="CENTER" layoutX="141.0" layoutY="452.0" prefHeight="17.0" prefWidth="264.0" textFill="WHITE">
          <font>

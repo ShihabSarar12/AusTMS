@@ -44,7 +44,6 @@ public class LoginController implements Initializable {
     double x = 0, y = 0;
     @FXML
     private AnchorPane anchorPane;
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
          
@@ -86,6 +85,7 @@ public class LoginController implements Initializable {
         System.out.println(verified);
         if(verified){
             try {
+                UserID.setUserID(userId);
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("MainPageStudent.fxml"));
                 root = loader.load();
             } catch (IOException ex) {

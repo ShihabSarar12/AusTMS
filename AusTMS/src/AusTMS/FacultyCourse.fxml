@@ -23,8 +23,14 @@
                <left>
                   <Pane prefHeight="583.0" prefWidth="178.0" styleClass="backgroundColorLeft" stylesheets="@login.css" BorderPane.alignment="CENTER">
                      <children>
-                        <Button layoutX="14.0" layoutY="187.0" mnemonicParsing="false" onAction="#postMaterial" prefHeight="43.0" prefWidth="151.0" styleClass="loginBtn" stylesheets="@login.css" text="Material" />
-                        <Button layoutX="14.0" layoutY="249.0" mnemonicParsing="false" onAction="#Online" prefHeight="43.0" prefWidth="151.0" styleClass="loginBtn" stylesheets="@login.css" text="Online" />
+                        <Button layoutX="14.0" layoutY="187.0" mnemonicParsing="false" onAction="#postMaterial" prefHeight="43.0" prefWidth="151.0" styleClass="loginBtn" stylesheets="@login.css" text="Material">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font></Button>
+                        <Button layoutX="14.0" layoutY="249.0" mnemonicParsing="false" onAction="#Online" prefHeight="43.0" prefWidth="151.0" styleClass="loginBtn" stylesheets="@login.css" text="Online">
+                           <font>
+                              <Font name="Berlin Sans FB" size="18.0" />
+                           </font></Button>
                      </children>
                   </Pane>
                </left>
@@ -37,7 +43,7 @@
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#backToFac" text="Back">
+                  <Button mnemonicParsing="false" onAction="#backToFac" prefHeight="25.0" prefWidth="56.0" styleClass="BackBtn" stylesheets="@login.css" text="Back" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>

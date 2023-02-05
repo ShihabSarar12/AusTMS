@@ -13,12 +13,12 @@ public class LoginVerification {
             System.out.println("Field = "+password);
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root","");
+            System.out.println("Connection received!");
             PreparedStatement statement = connect.prepareStatement("select * from student where Student_ID= ? and Password= ?");
+            System.out.println("Statement created");
             statement.setString(1, userID);
             statement.setString(2, password);
             ResultSet result = statement.executeQuery();
-            System.out.println("Connection received!");
-            System.out.println("Statement created");
             if(result.next()){
                 return true;
             }

@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -11,7 +13,7 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.LoginController">
    <children>
-      <BorderPane fx:id="mainPane" layoutY="22.0" prefHeight="583.0" prefWidth="762.0" style="-fx-border-color: #010005;" styleClass="backgroundColorCenter" stylesheets="@login.css">
+      <BorderPane fx:id="mainPane" layoutY="22.0" prefHeight="583.0" prefWidth="762.0" styleClass="backgroundColorCenter" stylesheets="@login.css">
          <left>
             <Pane prefHeight="583.0" prefWidth="178.0" styleClass="backgroundColorLeft" stylesheets="@login.css" BorderPane.alignment="CENTER">
                <children>
@@ -43,6 +45,13 @@
                </BorderPane.margin>
             </Pane>
          </left>
+         <center>
+            <ImageView fitHeight="306.0" fitWidth="313.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@6.png" />
+               </image>
+            </ImageView>
+         </center>
       </BorderPane>
       <AnchorPane layoutY="-2.0" prefHeight="29.0" prefWidth="760.0">
          <children>

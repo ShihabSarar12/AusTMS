@@ -44,9 +44,9 @@
                   </Pane>
                </children>
             </Pane>
-            <TextField alignment="CENTER" layoutX="307.0" layoutY="199.0" prefHeight="25.0" prefWidth="269.0" promptText="Edit Your Name" style="-fx-background-radius: 15;" />
-            <TextField alignment="CENTER" layoutX="307.0" layoutY="278.0" prefHeight="25.0" prefWidth="269.0" promptText="Edit Your Email" style="-fx-background-radius: 15;" />
-            <Label layoutX="307.0" layoutY="172.0" text="Name">
+            <TextField fx:id="nameTxt" alignment="CENTER" layoutX="307.0" layoutY="221.0" prefHeight="25.0" prefWidth="269.0" promptText="Edit Your Name" style="-fx-background-radius: 15;" />
+            <TextField fx:id="emailTxt" alignment="CENTER" layoutX="307.0" layoutY="278.0" prefHeight="25.0" prefWidth="269.0" promptText="Edit Your Email" style="-fx-background-radius: 15;" />
+            <Label layoutX="307.0" layoutY="194.0" text="Name">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
@@ -58,19 +58,19 @@
             </Label>
             <ImageView fitHeight="150.0" fitWidth="162.0" layoutX="370.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@7.jpeg" />
+                  <Image url="@7.png" />
                </image>
             </ImageView>
-            <Button layoutX="309.0" layoutY="358.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" styleClass="regBtn" stylesheets="@login.css" text="Edit" textFill="#ff8531">
+            <Button layoutX="407.0" layoutY="341.0" mnemonicParsing="false" onAction="#UpdateInfo" prefHeight="34.0" prefWidth="69.0" styleClass="regBtn" stylesheets="@login.css" text="Submit" textFill="#ff8531">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button layoutX="507.0" layoutY="358.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="69.0" styleClass="regBtn" stylesheets="@login.css" text="Submit" textFill="#ff8531">
+            <Label fx:id="savedLabel" layoutX="381.0" layoutY="410.0">
                <font>
-                  <Font name="System Bold" size="12.0" />
+                  <Font size="14.0" />
                </font>
-            </Button>
+            </Label>
          </children>
       </Pane>
       <Button contentDisplay="RIGHT" layoutX="732.0" layoutY="-2.0" mnemonicParsing="false" onAction="#Close" prefHeight="10.0" prefWidth="30.0" styleClass="buttonClose" stylesheets="@login.css" text="X" textFill="WHITE">
