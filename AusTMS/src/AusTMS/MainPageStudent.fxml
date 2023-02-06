@@ -10,7 +10,7 @@
 
 <AnchorPane fx:id="anchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.MainPageStudentController">
    <children>
-      <BorderPane fx:id="mainPane" layoutY="26.0" prefHeight="572.0" prefWidth="750.0" styleClass="backgroundColorCenter" stylesheets="@login.css">
+      <BorderPane fx:id="mainPane" layoutY="26.0" prefHeight="578.0" prefWidth="750.0" styleClass="backgroundColorCenter" stylesheets="@login.css">
          <left>
             <Pane prefHeight="570.0" prefWidth="171.0" styleClass="backgroundColorLeft" stylesheets="@login.css" BorderPane.alignment="CENTER">
                <children>
@@ -47,13 +47,13 @@
       </BorderPane>
       <AnchorPane layoutY="1.0" prefHeight="25.0" prefWidth="750.0">
          <children>
-            <MenuBar layoutX="-1.0" prefHeight="25.0" prefWidth="726.0" styleClass="topbar" stylesheets="@login.css" />
+            <MenuBar layoutX="-1.0" layoutY="-8.0" prefHeight="33.0" prefWidth="726.0" styleClass="topbar" stylesheets="@login.css" />
             <Button layoutX="725.0" mnemonicParsing="false" onAction="#Close" prefHeight="25.0" prefWidth="22.0" styleClass="buttonClose" stylesheets="@login.css" text="X" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#BackToLogin" prefHeight="25.0" prefWidth="65.0" styleClass="BackBtn" stylesheets="@login.css" text="Back" textFill="WHITE" />
+            <Button mnemonicParsing="false" onAction="#BackToLogin" prefHeight="25.0" prefWidth="65.0" styleClass="BackBtn" stylesheets="@login.css" text="Log out" textFill="WHITE" />
          </children>
       </AnchorPane>
    </children>

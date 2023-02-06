@@ -48,7 +48,13 @@ public class LoginController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
          
     }
-
+    @FXML
+    void AdminLogin(ActionEvent event) {
+        System.out.println("Admin Login Clicked");
+        FxmlLoader loader = new FxmlLoader();
+        Pane view = loader.getPage("AdminLogin");
+        mainPane.setCenter(view); 
+    }
     @FXML
     void FacultyLogin(ActionEvent event) {
         System.out.println("Faculty Login Clicked");
@@ -56,7 +62,30 @@ public class LoginController implements Initializable {
         Pane view = loader.getPage("FacultyLogin");
         mainPane.setCenter(view); 
     }
-
+    @FXML
+    void AdminPanel(ActionEvent event) {
+        System.out.println("Log In Clicked(Admin)");
+        boolean verified = false;
+        String userId = txtField.getText();
+        String password = passField.getText();
+        verified = LoginVerification.adminLoginVerify(userId, password);
+        System.out.println(verified);
+        if(verified){
+            try {
+                UserID.setUserID(userId);
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
+                root = loader.load();
+            } catch (IOException ex) {
+                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }else{
+            passLabel.setText("UserID and Password doesn't match!!");
+        }
+    }
     @FXML
     void StudentLogin(ActionEvent event){
         System.out.println("Student Login Clicked");

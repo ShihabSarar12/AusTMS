@@ -11,8 +11,8 @@
 
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="545.0" styleClass="studentLogin" stylesheets="@login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.LoginController">
    <children>
-      <TextField fx:id="txtField" layoutX="141.0" layoutY="257.0" prefHeight="25.0" prefWidth="264.0" style="-fx-background-radius: 15;" />
-      <PasswordField fx:id="passField" layoutX="141.0" layoutY="321.0" prefHeight="25.0" prefWidth="264.0" style="-fx-background-radius: 15;" />
+      <TextField fx:id="txtField" alignment="CENTER" layoutX="141.0" layoutY="257.0" prefHeight="25.0" prefWidth="264.0" promptText="Enter User ID" style="-fx-background-radius: 15;" />
+      <PasswordField fx:id="passField" alignment="CENTER" layoutX="141.0" layoutY="321.0" prefHeight="25.0" prefWidth="264.0" promptText="Enter Your Password" style="-fx-background-radius: 15;" />
       <Label layoutX="141.0" layoutY="236.0" prefHeight="20.0" prefWidth="95.0" text="User ID" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
@@ -34,7 +34,7 @@
       </Label>
       <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="197.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@1.png" />
+            <Image url="@1.jpg" />
          </image>
       </ImageView>
    </children>

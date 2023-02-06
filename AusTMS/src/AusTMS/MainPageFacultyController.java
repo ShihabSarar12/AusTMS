@@ -121,4 +121,11 @@ public class MainPageFacultyController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    void StudentInfoFac(ActionEvent event) {
+        System.out.println("Inside Student Find");
+        FxmlLoader loader = new FxmlLoader();
+        Pane view = loader.getPage("StudentFind");
+        mainPane.setCenter(view);
+    }
 }
