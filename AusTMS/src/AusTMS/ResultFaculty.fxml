@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.ResultController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.ResultFacultyController">
    <children>
       <Label layoutX="66.0" layoutY="118.0" text="CSE-2103 : " textFill="WHITE">
          <font>
@@ -63,52 +64,109 @@
       <Line endX="405.0" layoutX="115.0" layoutY="453.0" startX="-100.0" stroke="#b5a9a9" />
       <VBox layoutX="371.0" layoutY="104.0" prefHeight="321.0" prefWidth="82.0">
          <children>
-            <TextField prefHeight="25.0" prefWidth="79.0">
+            <TextField fx:id="txtm1" alignment="CENTER" prefHeight="25.0" prefWidth="79.0" promptText="CGPA">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
             </TextField>
-            <TextField prefHeight="25.0" prefWidth="79.0">
+            <TextField fx:id="txtm2" alignment="CENTER" prefHeight="25.0" prefWidth="79.0" promptText="CGPA">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
             </TextField>
-            <TextField prefHeight="25.0" prefWidth="79.0">
+            <TextField fx:id="txtm3" alignment="CENTER" prefHeight="25.0" prefWidth="79.0" promptText="CGPA">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
             </TextField>
-            <TextField prefHeight="25.0" prefWidth="79.0">
+            <TextField fx:id="txtm4" alignment="CENTER" prefHeight="25.0" prefWidth="79.0" promptText="CGPA">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
             </TextField>
-            <TextField prefHeight="25.0" prefWidth="79.0">
+            <TextField fx:id="txtm5" alignment="CENTER" prefHeight="25.0" prefWidth="79.0" promptText="CGPA">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
             </TextField>
-            <TextField prefHeight="25.0" prefWidth="79.0">
+            <TextField fx:id="txtm6" alignment="CENTER" prefHeight="25.0" prefWidth="79.0" promptText="CGPA">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
             </TextField>
-            <TextField prefHeight="25.0" prefWidth="79.0">
+            <TextField fx:id="txtm7" alignment="CENTER" prefHeight="25.0" prefWidth="79.0" promptText="CGPA">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
             </TextField>
-            <TextField prefHeight="25.0" prefWidth="79.0">
+            <TextField fx:id="txtm8" alignment="CENTER" prefHeight="25.0" prefWidth="79.0" promptText="CGPA">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
             </TextField>
-            <TextField prefHeight="25.0" prefWidth="79.0">
+            <TextField fx:id="txtm9" alignment="CENTER" prefHeight="25.0" prefWidth="79.0" promptText="CGPA">
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="Berlin Sans FB" size="14.0" />
+               </font>
             </TextField>
          </children>
       </VBox>
+      <Label fx:id="txtavg" alignment="CENTER" layoutX="373.0" layoutY="460.0" prefHeight="26.0" prefWidth="82.0" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="170.0" layoutY="34.0" text="StudentID:" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="stuID" alignment="CENTER" layoutX="162.0" layoutY="52.0" prefHeight="26.0" prefWidth="202.0" promptText="Student ID" style="-fx-background-radius: 15;">
+         <font>
+            <Font name="Berlin Sans FB" size="14.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btn" layoutX="359.0" layoutY="509.0" mnemonicParsing="false" onAction="#Submit" prefHeight="34.0" prefWidth="70.0" styleClass="loginBtn" stylesheets="@login.css" text="Submit">
+         <font>
+            <Font name="Berlin Sans FB" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="calbtn" layoutX="230.0" layoutY="509.0" mnemonicParsing="false" onAction="#Cal" prefHeight="34.0" prefWidth="78.0" styleClass="loginBtn" stylesheets="@login.css" text="Calculate">
+         <font>
+            <Font name="Berlin Sans FB" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="clearbtn" layoutX="115.0" layoutY="509.0" mnemonicParsing="false" onAction="#Clear" prefHeight="34.0" prefWidth="62.0" styleClass="loginBtn" stylesheets="@login.css" text="Clear">
+         <font>
+            <Font name="Berlin Sans FB" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

@@ -53,47 +53,47 @@
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
       </Label>
-      <Text fill="WHITE" layoutX="375.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+      <Text fx:id="txtm1" fill="WHITE" layoutX="375.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="375.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+      <Text fx:id="txtm2" fill="WHITE" layoutX="375.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="375.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+      <Text fx:id="txtm3" fill="WHITE" layoutX="375.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="375.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+      <Text fx:id="txtm4" fill="WHITE" layoutX="375.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="375.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+      <Text fx:id="txtm5" fill="WHITE" layoutX="375.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="375.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+      <Text fx:id="txtm6" fill="WHITE" layoutX="375.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="375.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+      <Text fx:id="txtm7" fill="WHITE" layoutX="375.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="375.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+      <Text fx:id="txtm8" fill="WHITE" layoutX="375.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="375.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+      <Text fx:id="txtm9" fill="WHITE" layoutX="375.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
          <font>
             <Font size="15.0" />
          </font>
@@ -104,7 +104,7 @@
          </font>
       </Label>
       <Line endX="405.0" layoutX="115.0" layoutY="453.0" startX="-100.0" stroke="#b5a9a9" />
-      <Text fill="WHITE" layoutX="375.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
+      <Text fx:id="txtavg" fill="WHITE" layoutX="375.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="74.0">
          <font>
             <Font size="15.0" />
          </font>
