@@ -59,7 +59,8 @@ public class AdminController implements Initializable {
         System.out.println("Faculty Clicked");
         FxmlLoader loader = new FxmlLoader();
         Pane view = loader.getPage("AdminFaculty");
-        mainPane.setLeft(view); 
+        mainPane.setLeft(view);
+        
     }
     @FXML
     void InsideStd(ActionEvent event) {

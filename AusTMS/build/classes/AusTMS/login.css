@@ -5,6 +5,24 @@
 .backgroundColorLeft {
     -fx-background-color: linear-gradient(to top, #242323, #4d4b4b);
 }
+.webBtn{
+    -fx-background-color: #ff8531;
+    -fx-border-radius: 0 30 30 0;
+    -fx-background-radius: 0 30 30 0;
+    -fx-border-color: #010005;
+}
+.webBtn:hover{
+    -fx-background-color: #ffa600;
+    -fx-border-radius: 0 15 15 0;
+    -fx-background-radius: 0 15 15 0;
+    -fx-border-color: #010005;  
+}
+.webBtn:pressed{
+    -fx-background-color: #ff6361;
+    -fx-border-radius: 0 15 15 0;
+    -fx-background-radius: 0 15 15 0;
+    -fx-border-color: #010005;
+}
 .BackBtn{
     -fx-background-color: #262323;
     -fx-background-radius: 0 15 15 0;  

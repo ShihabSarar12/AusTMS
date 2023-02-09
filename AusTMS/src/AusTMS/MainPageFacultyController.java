@@ -58,7 +58,7 @@ public class MainPageFacultyController implements Initializable {
     }
     @FXML
     public void Dragged(MouseEvent event) {
-        Stage stage = (Stage)anchorPane.getScene().getWindow();
+        stage = (Stage)anchorPane.getScene().getWindow();
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
     }
@@ -128,4 +128,5 @@ public class MainPageFacultyController implements Initializable {
         Pane view = loader.getPage("StudentFind");
         mainPane.setCenter(view);
     }
+    
 }

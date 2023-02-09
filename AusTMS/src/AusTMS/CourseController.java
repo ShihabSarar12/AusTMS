@@ -1,11 +1,18 @@
 
 package AusTMS;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.HostServices;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +24,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 public class CourseController implements Initializable {
@@ -26,27 +35,25 @@ public class CourseController implements Initializable {
     private AnchorPane anchorPane;
     private double x = 0;
     private double y = 0;
-   
     private Stage stage;
     private Scene scene;
     private Parent root;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-    } 
-      @FXML
-    void Online(ActionEvent event) {
-        System.out.println("Inside Online");
+    }
+    @FXML
+    void CSE2100(ActionEvent event) {
+        System.out.println("Inside CSE2100");
         FxmlLoader loader = new FxmlLoader();
-        Pane view = loader.getPage("Online");
+        Pane view = loader.getPage("CourseSub");
         mainPane.setCenter(view);
     }
-
     @FXML
-    public void postMaterial(ActionEvent event) {
-        System.out.println("Inside material");
+    void CSE2103(ActionEvent event) {
+        System.out.println("Inside CSE2103");
         FxmlLoader loader = new FxmlLoader();
-        Pane view = loader.getPage("Material");
+        Pane view = loader.getPage("CSE2103CourseSub");
         mainPane.setCenter(view);
     }
     @FXML
@@ -94,7 +101,7 @@ public class CourseController implements Initializable {
     }
     @FXML
     public void Dragged(MouseEvent event) {
-        Stage stage = (Stage)anchorPane.getScene().getWindow();
+        stage = (Stage)anchorPane.getScene().getWindow();
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
     }
