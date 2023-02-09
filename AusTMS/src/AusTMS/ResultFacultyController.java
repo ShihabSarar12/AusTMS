@@ -71,7 +71,6 @@ public class ResultFacultyController implements Initializable {
         avg = (total / 20.25);
         txtavg.setText(String.format("%.3f", avg));
     }
-
     @FXML
     void Clear(ActionEvent event) {
         txtm1.setText("");

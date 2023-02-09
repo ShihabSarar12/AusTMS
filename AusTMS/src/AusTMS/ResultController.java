@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.text.Text;
 
 public class ResultController implements Initializable {
+
     @FXML
     private Text txtavg;
     @FXML
@@ -34,18 +35,19 @@ public class ResultController implements Initializable {
     private Text txtm8;
     @FXML
     private Text txtm9;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        System.out.println("userID="+UserID.getUserID());
+        System.out.println("userID=" + UserID.getUserID());
         String sql = "select * from result where Student_ID=? ";
         String stuid = UserID.getUserID();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root","");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management", "root", "");
             PreparedStatement statement = connect.prepareStatement(sql);
-            statement.setString(1,stuid);
-            ResultSet result=statement.executeQuery();
-            if(result.next()){
+            statement.setString(1, stuid);
+            ResultSet result = statement.executeQuery();
+            if (result.next()) {
                 txtm1.setText(result.getString("CSE_2103"));
                 txtm2.setText(result.getString("CSE_2105"));
                 txtm3.setText(result.getString("EEE_2141"));
@@ -59,9 +61,9 @@ public class ResultController implements Initializable {
             }
             System.out.println("Information Saved");
         } catch (ClassNotFoundException ex) {
-             Logger.getLogger(ResultFacultyController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ResultFacultyController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-             Logger.getLogger(ResultFacultyController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ResultFacultyController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

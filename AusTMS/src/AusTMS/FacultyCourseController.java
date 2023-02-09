@@ -76,7 +76,16 @@ public class FacultyCourseController implements Initializable {
     }
     @FXML
     void CSE2100Online(ActionEvent event) {
-        
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FacultyEval.fxml"));
+            root = loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(FacultyCourseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     @FXML
     void CSE2103Online(ActionEvent event) {

@@ -95,7 +95,7 @@ public class LoginController implements Initializable {
     }
     @FXML
     public void Dragged(MouseEvent event) {
-        Stage stage = (Stage)anchorPane.getScene().getWindow();
+        stage = (Stage)anchorPane.getScene().getWindow();
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
     }
@@ -153,7 +153,7 @@ public class LoginController implements Initializable {
     }
     @FXML
     public void Close(ActionEvent event){
-        Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
+        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         stage.close();
     }
     public void sceneChange(){
