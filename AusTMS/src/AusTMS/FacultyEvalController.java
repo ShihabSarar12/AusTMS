@@ -42,7 +42,28 @@ public class FacultyEvalController implements Initializable {
     private double y = 0;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        String Id = UserID.getStudentID();
+        IdTxt.setText(Id);
+        String sql = "SELECT * FROM online WHERE Student_ID= ?";
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root","");
+            System.out.println("Connection received!");
+            PreparedStatement statement = connect.prepareStatement(sql);
+            statement.setString(1, Id);
+            ResultSet result = statement.executeQuery();
+            if(result.next()){
+                fileNameTxt.setText(result.getString("File_Name"));
+                codeFacTxt.setText(result.getString("Code"));
+            }
+            else{
+                System.out.println("Doesn't exist");
+            }
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CSE2100OnlineController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(CSE2100OnlineController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }    
 
     @FXML
@@ -85,40 +106,12 @@ public class FacultyEvalController implements Initializable {
         }
         
     }
-
-    @FXML
-    private void FetchCode(ActionEvent event) {
-        String sql = "SELECT * FROM online WHERE Student_ID= ?";
-        String Id = IdTxt.getText();
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root","");
-            System.out.println("Connection received!");
-            PreparedStatement statement = connect.prepareStatement(sql);
-            statement.setString(1, Id);
-            ResultSet result = statement.executeQuery();
-            if(result.next()){
-                fileNameTxt.setText(result.getString("File_Name"));
-                codeFacTxt.setText(result.getString("Code"));
-            }
-            else{
-                System.out.println("Doesn't exist");
-            }
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(CSE2100OnlineController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(CSE2100OnlineController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }
-
     @FXML
     private void Dragged(MouseEvent event) {
         stage = (Stage)anchorPane.getScene().getWindow();
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
     }
-
     @FXML
     private void Pressed(MouseEvent event) {
         x = event.getSceneX();

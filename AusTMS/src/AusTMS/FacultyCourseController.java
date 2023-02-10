@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -76,8 +77,8 @@ public class FacultyCourseController implements Initializable {
     }
     @FXML
     void CSE2100Online(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("FacultyEval.fxml"));
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("StudentSubmitted.fxml"));
             root = loader.load();
         } catch (IOException ex) {
             Logger.getLogger(FacultyCourseController.class.getName()).log(Level.SEVERE, null, ex);

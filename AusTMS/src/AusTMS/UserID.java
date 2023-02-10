@@ -11,6 +11,13 @@ public class UserID {
     private static String derbyLink;
     private static String graphLink;
     private static String linkedListLink;
+    private static String studentID;
+    public static String getStudentID(){
+        return studentID;
+    }
+    public static void setStudentID(String studentID){
+        UserID.studentID = studentID;
+    }
     public static String getGraphLink(){
         return graphLink;
     }
