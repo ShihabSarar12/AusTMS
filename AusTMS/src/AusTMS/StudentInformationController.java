@@ -65,7 +65,7 @@ public class StudentInformationController implements Initializable {
     @FXML
     void BackToStudent(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("MainPageFaculty.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminStudent.fxml"));
             root = loader.load();
         } catch (IOException ex) {
             Logger.getLogger(MainPageStudentController.class.getName()).log(Level.SEVERE, null, ex);
@@ -75,20 +75,17 @@ public class StudentInformationController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
     void Close(ActionEvent event) {
         stage = (Stage)anchorPane.getScene().getWindow();
         stage.close();
     }
-
     @FXML
     void Dragged(MouseEvent event) {
         stage = (Stage)anchorPane.getScene().getWindow();
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
     }
-
     @FXML
     void Pressed(MouseEvent event) {
         x = event.getSceneX();

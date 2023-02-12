@@ -22,7 +22,7 @@
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font></Button>
-                  <Button layoutX="11.0" layoutY="67.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="150.0" styleClass="loginBtn" stylesheets="@login.css" text="Routine">
+                  <Button layoutX="11.0" layoutY="67.0" mnemonicParsing="false" onAction="#Routine" prefHeight="43.0" prefWidth="150.0" styleClass="loginBtn" stylesheets="@login.css" text="Routine">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font></Button>

@@ -98,6 +98,13 @@ public class MainPageStudentController implements Initializable {
         mainPane.setCenter(view);
     }
     @FXML
+    void Routine(ActionEvent event) {
+      System.out.println("Inside routine System");
+      FxmlLoader loader = new FxmlLoader();
+      Pane view = loader.getPage("Routine");
+      mainPane.setCenter(view);
+    }
+    @FXML
     void BackToMain(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("MainPageStudent.fxml"));

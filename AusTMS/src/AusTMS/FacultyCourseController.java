@@ -3,6 +3,7 @@ package AusTMS;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,8 +52,7 @@ public class FacultyCourseController implements Initializable {
         if(!derbyLink.startsWith("https://")){
             derbyLink = "https://"+derbyLink;
         }
-        UserID.setDerbyLink(derbyLink);
-        System.out.println("derby "+UserID.getDerbyLink());
+        InsertData("Derby", derbyLink);
         derbyTxt.setText("");
     }
     @FXML
@@ -61,8 +61,7 @@ public class FacultyCourseController implements Initializable {
         if(!javaFXLink.startsWith("https://")){
             javaFXLink = "https://"+javaFXLink;
         }
-        UserID.setJavaFXLink(javaFXLink);
-        System.out.println("JavaFx "+UserID.getJavaFXLink());
+        InsertData("JavaFX", javaFXLink);
         javaFXTxt.setText("");
     }
     @FXML
@@ -71,8 +70,7 @@ public class FacultyCourseController implements Initializable {
         if(!javaSocketLink.startsWith("https://")){
             javaSocketLink = "https://"+javaSocketLink;
         }
-        UserID.setJavaSocketLink(javaSocketLink);
-        System.out.println("JavaSocket "+UserID.getJavaSocketLink());
+        InsertData("JavaSocket", javaSocketLink);
         socketTxt.setText("");
     }
     @FXML
@@ -88,6 +86,24 @@ public class FacultyCourseController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    public void InsertData(String chapter,String link){
+        String sql = "INSERT INTO material (Chapter,Link) VALUES (?,?) ON DUPLICATE KEY UPDATE Chapter=?, Link=?";
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver"); 
+            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root","");
+            PreparedStatement statement = connect.prepareStatement(sql);
+            statement.setString(1,chapter);
+            statement.setString(2,link);
+            statement.setString(3,chapter);
+            statement.setString(4,link);
+            int row = statement.executeUpdate();
+            System.out.println(row+ "row inserted");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FacultyCourseController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(FacultyCourseController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     @FXML
     void CSE2103Online(ActionEvent event) {
 
@@ -98,8 +114,7 @@ public class FacultyCourseController implements Initializable {
         if(!graphLink.startsWith("https://")){
             graphLink = "https://"+graphLink;
         }
-        UserID.setGraphLink(graphLink);
-        System.out.println("graphLink "+UserID.getGraphLink());
+        InsertData("Graph", graphLink);
         graphTxt.setText("");
     }
     @FXML
@@ -108,8 +123,7 @@ public class FacultyCourseController implements Initializable {
         if(!linkedListLink.startsWith("https://")){
             linkedListLink = "https://"+linkedListLink;
         }
-        UserID.setLinkedListLink(linkedListLink);
-        System.out.println("linekdList "+UserID.getLinkedListLink());
+        InsertData("LinkedList", linkedListLink);
         linkedListTxt.setText("");
     }
     @FXML

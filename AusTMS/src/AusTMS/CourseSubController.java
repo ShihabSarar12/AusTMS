@@ -4,6 +4,11 @@ package AusTMS;
 import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,16 +30,31 @@ public class CourseSubController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         
     }
+    public String getLink(String chapter){
+        String link = null;
+        String sql = "SELECT * FROM material WHERE Chapter=?";
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root","");
+            PreparedStatement statement = connect.prepareStatement(sql);
+            statement.setString(1, chapter);
+            ResultSet result = statement.executeQuery();
+            if(result.next()){
+                link = result.getString("Link");
+            }
+            return link;
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(CSE2103CourseSubController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+                Logger.getLogger(NewRegistrationController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
     @FXML
     void Derby(ActionEvent event) {
         try {
             Desktop desktop = Desktop.getDesktop();
-            if(UserID.getDerbyLink()==null){
-                desktop.browse(java.net.URI.create("https://shorturl.at/MNX15"));
-            }
-            else{
-                desktop.browse(java.net.URI.create(UserID.getDerbyLink()));
-            }
+            desktop.browse(java.net.URI.create(getLink("Derby")));
         } catch (IOException ex) {
             Logger.getLogger(CourseSubController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -43,12 +63,7 @@ public class CourseSubController implements Initializable {
     void JavaFX(ActionEvent event) {
         try {
             Desktop desktop = Desktop.getDesktop();
-            if(UserID.getJavaFXLink()==null){
-                desktop.browse(java.net.URI.create("https://shorturl.at/eIY79"));
-            }
-            else{
-                desktop.browse(java.net.URI.create(UserID.getJavaFXLink()));
-            }
+            desktop.browse(java.net.URI.create(getLink("JavaFX")));
         } catch (IOException ex) {
             Logger.getLogger(CourseSubController.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -57,13 +72,7 @@ public class CourseSubController implements Initializable {
     void JavaSocket(ActionEvent event) {
         try {
             Desktop desktop = Desktop.getDesktop();
-            if(UserID.getJavaSocketLink()==null){
-                desktop.browse(java.net.URI.create("https://shorturl.at/cov16"));
-            }
-            else{
-                desktop.browse(java.net.URI.create(UserID.getJavaSocketLink()));
-            }
-            
+            desktop.browse(java.net.URI.create(getLink("JavaSocket")));
         } catch (IOException ex) {
             Logger.getLogger(CourseSubController.class.getName()).log(Level.SEVERE, null, ex);
         }
