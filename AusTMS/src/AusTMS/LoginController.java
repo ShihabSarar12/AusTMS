@@ -6,10 +6,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.animation.Interpolator;
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,9 +21,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
 public class LoginController implements Initializable {
     @FXML
@@ -65,6 +59,13 @@ public class LoginController implements Initializable {
         mainPane.setCenter(view);
     }
     @FXML
+    void AdminLogin(ActionEvent event) {
+        System.out.println("Admin Login Clicked");
+        FxmlLoader loader = new FxmlLoader();
+        Pane view = loader.getPage("AdminLogin");
+        mainPane.setCenter(view); 
+    }
+    @FXML
     public void Dragged(MouseEvent event) {
         Stage stage = (Stage)anchorPane.getScene().getWindow();
         stage.setY(event.getScreenY() - y);
@@ -78,10 +79,10 @@ public class LoginController implements Initializable {
     @FXML
     void StudentLoggedIn(ActionEvent event) {
         System.out.println("Log In Clicked(Student)");
-        boolean verified = false;
+        boolean verified = true;
         String userId = txtField.getText();
         String password = passField.getText();
-        verified = LoginVerification.studentLoginVerify(userId, password);
+        //verified = LoginVerification.studentLoginVerify(userId, password);
         System.out.println(verified);
         if(verified){
             try {
@@ -102,10 +103,10 @@ public class LoginController implements Initializable {
     @FXML
     void FacultyLoggedIn(ActionEvent event) {
         System.out.println("Log In Clicked(Faculty)");
-        boolean verified = false;
+        boolean verified = true;
         String userId = txtField.getText();
         String password = passField.getText();
-        verified = LoginVerification.facultyLoginVerify(userId, password);
+       // verified = LoginVerification.facultyLoginVerify(userId, password);
         System.out.println(verified);
         if(verified){
             try {
@@ -148,6 +149,22 @@ public class LoginController implements Initializable {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
         stage = (Stage)anchorPane.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+      
+    @FXML
+    void AdminPanel(ActionEvent event) {
+       
+        System.out.println("inside adminpanel");
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
+            root = loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

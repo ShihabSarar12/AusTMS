@@ -153,3 +153,6 @@
     -fx-background-color: #fcba03;
     
 }
+.backgroundColorAdmin {
+    -fx-background-color: linear-gradient(to left,#141414,#4e4f4f);
+}

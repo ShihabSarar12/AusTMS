@@ -121,4 +121,5 @@ public class MainPageFacultyController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    
 }

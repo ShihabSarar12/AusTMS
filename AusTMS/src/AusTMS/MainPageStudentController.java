@@ -13,7 +13,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -21,7 +20,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class MainPageStudentController implements Initializable {
     @FXML
@@ -135,5 +133,13 @@ public class MainPageStudentController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    @FXML
+    void routine(ActionEvent event) {
+      System.out.println("Inside routine System");
+      FxmlLoader loader = new FxmlLoader();
+      Pane view = loader.getPage("Routine");
+      mainPane.setCenter(view);
+    
     }
 }

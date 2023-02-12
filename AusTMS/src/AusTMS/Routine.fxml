@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="545.0" styleClass="backgroundColorCenter" stylesheets="@login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.RoutineController">
+   <children>
+      <TableView fx:id="table" layoutX="118.0" layoutY="196.0" prefHeight="161.0" prefWidth="428.0" style="-fx-background-color: #c9c9c9;">
+        <columns>
+          <TableColumn fx:id="Time1" prefWidth="140.66666412353516" text="10:30AM - 11:20AM" />
+            <TableColumn fx:id="Time2" prefWidth="147.33335876464844" text="11:20AM - 12:10PM" />
+            <TableColumn fx:id="Time3" prefWidth="146.00003051757812" text="12:10PM - 1:00PM" />
+        </columns>
+      </TableView>
+      <Label contentDisplay="CENTER" layoutX="3.0" layoutY="196.0" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: #c9c9c9;" text="       DAY/TIME">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="3.0" layoutY="222.0" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: #c9c9c9;" text="       Sunday" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="3.0" layoutY="248.0" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: #c9c9c9;" text="      Monday">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="3.0" layoutY="274.0" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: #c9c9c9;" text="      Tuesday">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="3.0" layoutY="300.0" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: #c9c9c9;" text="      Wednesday">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label contentDisplay="CENTER" layoutX="3.0" layoutY="326.0" prefHeight="25.0" prefWidth="113.0" style="-fx-background-color: #c9c9c9;" text="      Thursday">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
