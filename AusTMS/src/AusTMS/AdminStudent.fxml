@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.AdminStudentController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.AdminStudentController">
    <children>
       <BorderPane fx:id="mainPane" layoutY="22.0" prefHeight="583.0" prefWidth="762.0" styleClass="backgroundColorReg" stylesheets="@login.css">
          <left>

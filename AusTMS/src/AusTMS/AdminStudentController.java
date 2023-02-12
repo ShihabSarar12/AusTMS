@@ -3,9 +3,16 @@ package AusTMS;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,19 +21,15 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class AdminStudentController implements Initializable {
-    @FXML
-    private TextField IdTxt;
-    @FXML
-    private TextField emailTxt;
-    @FXML
-    private TextField nameTxt;
     @FXML
     private AnchorPane anchorPane;
     @FXML
@@ -84,7 +87,15 @@ public class AdminStudentController implements Initializable {
     }
     @FXML
     private void studentShow(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource(""));
-        
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminStudentInfo.fxml"));
+            root = loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

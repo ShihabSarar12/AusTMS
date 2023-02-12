@@ -29,11 +29,6 @@ public class AdminController implements Initializable {
     private AnchorPane anchorPane;
     @FXML
     private BorderPane mainPane;
-
-    public AdminController() {
-        
-    }
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
        
@@ -64,10 +59,16 @@ public class AdminController implements Initializable {
     }
     @FXML
     void InsideStd(ActionEvent event) {
-        System.out.println("Student Clicked");
-        FxmlLoader loader = new FxmlLoader();
-        Pane view = loader.getPage("AdminStudent");
-        mainPane.setLeft(view);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminStudent.fxml"));
+            root = loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     @FXML
     void BackToLogin(ActionEvent event) {
