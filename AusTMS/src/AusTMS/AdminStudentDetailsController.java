@@ -89,6 +89,13 @@ public class AdminStudentDetailsController implements Initializable {
             statement.setString(1,UserID.getStudentID());
             int row = statement.executeUpdate();
             System.out.println("Deleted successfully");
+            String dropSql = "ALTER TABLE student\n DROP id";
+            statement = connect.prepareStatement(dropSql);
+            boolean done = statement.execute();
+            String addSql = "ALTER TABLE student\n ADD id INT NOT NULL AUTO_INCREMENT Unique Key";
+            statement = connect.prepareStatement(addSql);
+            done = statement.execute();
+            System.out.println("Successfully id resolved");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(AdminStudentController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
