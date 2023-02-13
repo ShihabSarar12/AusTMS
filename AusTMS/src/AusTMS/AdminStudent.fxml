@@ -14,17 +14,12 @@
          <left>
             <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="583.0" prefWidth="188.0" styleClass="backgroundColorLeft" stylesheets="@login.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="23.0" layoutY="36.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="137.0" styleClass="loginBtn" stylesheets="@login.css" text="Approve Entry">
+                  <Button layoutX="23.0" layoutY="36.0" mnemonicParsing="false" onAction="#Approve" prefHeight="33.0" prefWidth="137.0" styleClass="loginBtn" stylesheets="@login.css" text="Approve Entry">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="23.0" layoutY="114.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="137.0" styleClass="loginBtn" stylesheets="@login.css" text="Delete User">
-                     <font>
-                        <Font name="Berlin Sans FB" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button layoutX="23.0" layoutY="194.0" mnemonicParsing="false" onAction="#studentShow" prefHeight="33.0" prefWidth="137.0" styleClass="loginBtn" stylesheets="@login.css" text="Student Info">
+                  <Button layoutX="23.0" layoutY="91.0" mnemonicParsing="false" onAction="#studentShow" prefHeight="33.0" prefWidth="137.0" styleClass="loginBtn" stylesheets="@login.css" text="Student Info">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>

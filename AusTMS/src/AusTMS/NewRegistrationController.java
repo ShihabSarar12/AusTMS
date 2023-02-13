@@ -49,7 +49,7 @@ public class NewRegistrationController implements Initializable {
     }
     @FXML
     void Close(ActionEvent event) {
-        Stage stage = (Stage)((Button)event.getSource()).getScene().getWindow();
+        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         stage.close();
     }
 
@@ -66,7 +66,7 @@ public class NewRegistrationController implements Initializable {
     }
     @FXML
     void RegSaved(ActionEvent event) {
-        String sql = "INSERT INTO student (Student_ID, Name, Email, Password) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO pending_approval (Student_ID, Name, Email, Password) VALUES (?, ?, ?, ?)";
         String uID = IdTxt.getText();
         String name = nameTxt.getText();
         String email = emailTxt.getText();

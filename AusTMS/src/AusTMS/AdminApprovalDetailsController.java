@@ -23,13 +23,16 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class AdminStudentDetailsController implements Initializable {
+public class AdminApprovalDetailsController implements Initializable {
     @FXML
     private TextField nameTxt;
     @FXML
     private TextField emailTxt;
     @FXML
     private TextField IdTxt;
+    String userName = null;
+    String userEmail = null;
+    String password = null;
     private Parent root;
     private Stage stage;
     private Scene scene;
@@ -38,7 +41,7 @@ public class AdminStudentDetailsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
-            String sql = "SELECT * FROM student WHERE Student_ID=?";
+            String sql = "SELECT * FROM pending_approval WHERE Student_ID=?";
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root","");
             System.out.println("Connection received!");
@@ -46,8 +49,9 @@ public class AdminStudentDetailsController implements Initializable {
             statement.setString(1, UserID.getStudentID());
             ResultSet result = statement.executeQuery();
             if(result.next()){
-                String userName = result.getString("Name");
-                String userEmail = result.getString("Email");
+                userName = result.getString("Name");
+                userEmail = result.getString("Email");
+                password = result.getString("Password");
                 IdTxt.setText(UserID.getStudentID());
                 emailTxt.setText(userEmail);
                 nameTxt.setText(userName);
@@ -57,18 +61,16 @@ public class AdminStudentDetailsController implements Initializable {
         } catch (SQLException ex) {
             Logger.getLogger(StudentFindController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }    
-
+    }
     @FXML
     private void Close(ActionEvent event) {
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         stage.close();
     }
-
     @FXML
     private void BackToStudent(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminStudentInfo.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminApproval.fxml"));
             root = loader.load();
         } catch (IOException ex) {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
@@ -78,30 +80,38 @@ public class AdminStudentDetailsController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
-    private void DeleteUser(ActionEvent event) {
-        String sql = "DELETE FROM student WHERE Student_ID=?";
+    private void ApproveStudent(ActionEvent event) {
+        String sql = "INSERT INTO student (Student_ID,Name,Email,Password) VALUES (?,?,?,?)";
+        String dltSql = "DELETE fROM pending_approval WHERE Student_ID=?";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root","");
             PreparedStatement statement = connect.prepareStatement(sql);
             statement.setString(1,UserID.getStudentID());
+            statement.setString(2,userName);
+            statement.setString(3,userEmail);
+            statement.setString(4,password);
             int row = statement.executeUpdate();
-            System.out.println("Deleted successfully");
-            String dropSql = "ALTER TABLE student\n DROP id";
+            System.out.println(row+" row affected");
+            System.out.println("Successfully inserted");
+            statement = connect.prepareStatement(dltSql);
+            statement.setString(1,UserID.getStudentID());
+            row = statement.executeUpdate();
+            System.out.println(row+" row Deleted Successfully");
+            String dropSql = "ALTER TABLE pending_approval\n DROP id";
             statement = connect.prepareStatement(dropSql);
             boolean done = statement.execute();
             System.out.println(done);
-            String addSql = "ALTER TABLE student\n ADD id MEDIUMINT NOT NULL AUTO_INCREMENT Primary Key";
+            String addSql = "ALTER TABLE pending_approval\n ADD id MEDIUMINT NOT NULL AUTO_INCREMENT Primary Key";
             statement = connect.prepareStatement(addSql);
             done = statement.execute();
             System.out.println(done);
             System.out.println("Successfully id resolved");
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AdminStudentController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminApprovalDetailsController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(AdminStudentController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(AdminApprovalDetailsController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     @FXML
@@ -110,11 +120,9 @@ public class AdminStudentDetailsController implements Initializable {
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
     }
-
     @FXML
     private void Pressed(MouseEvent event) {
         x = event.getSceneX();
         y = event.getSceneY();
     }
-    
 }
