@@ -6,13 +6,10 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,30 +18,25 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-public class AdminStudentController implements Initializable {
-    @FXML
-    private AnchorPane anchorPane;
+public class AdminFacultyController implements Initializable {
     @FXML
     private BorderPane mainPane;
     @FXML
+    private Label matchLabel;
+    @FXML
     private TextField IdTxt;
-
     @FXML
     private TextField emailTxt;
-
     @FXML
     private TextField nameTxt;
-
     @FXML
-    private TextField password;
+    private TextField passwordTxt;
     private Parent root;
     private Stage stage;
     private Scene scene;
@@ -55,9 +47,9 @@ public class AdminStudentController implements Initializable {
         
     }
     @FXML
-    private void BackToAdmin(ActionEvent event) {
+    private void Entry(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminFacultyInfoEntry.fxml"));
             root = loader.load();
         } catch (IOException ex) {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
@@ -66,6 +58,31 @@ public class AdminStudentController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    @FXML
+    void ApproveEntry(ActionEvent event) {
+        String sql = "INSERT INTO faculty (Faculty_ID, Name, Email, Password) VALUES (?, ?, ?, ?)";
+        String uID = IdTxt.getText();
+        String name = nameTxt.getText();
+        String email = emailTxt.getText();
+        String password = passwordTxt.getText();
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root",""); 
+            PreparedStatement statement = connect.prepareStatement(sql);
+            statement.setString(1,uID);
+            statement.setString(2, name);
+            statement.setString(3, email);
+            statement.setString(4, password);
+            int row = statement.executeUpdate();
+            System.out.println(row+" inserted successfully!");
+            System.out.println("Information Saved");
+            matchLabel.setText("Saved successfully");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(NewRegistrationController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(NewRegistrationController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     @FXML
     void BackToFaculty(ActionEvent event) {
@@ -81,14 +98,9 @@ public class AdminStudentController implements Initializable {
         stage.show();
     }
     @FXML
-    private void Close(ActionEvent event) {
-        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        stage.close();
-    }
-    @FXML
-    void Approve(ActionEvent event) {
+    private void BackToAdmin(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminApproval.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Admin.fxml"));
             root = loader.load();
         } catch (IOException ex) {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
@@ -97,6 +109,19 @@ public class AdminStudentController implements Initializable {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    @FXML
+    private void DeleteUser(ActionEvent event) {
+        
+    }
+    @FXML
+    private void Feedback(ActionEvent event) {
+        
+    }
+    @FXML
+    private void Close(ActionEvent event) {
+        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
+        stage.close();
     }
     @FXML
     private void BackToLogin(ActionEvent event) {
@@ -121,18 +146,5 @@ public class AdminStudentController implements Initializable {
     private void Pressed(MouseEvent event) {
         x = event.getSceneX();
         y = event.getSceneY();
-    }
-    @FXML
-    private void studentShow(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminStudentInfo.fxml"));
-            root = loader.load();
-        } catch (IOException ex) {
-            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
     }
 }

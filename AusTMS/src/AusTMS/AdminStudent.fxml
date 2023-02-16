@@ -12,19 +12,19 @@
    <children>
       <BorderPane fx:id="mainPane" layoutY="22.0" prefHeight="583.0" prefWidth="762.0" styleClass="backgroundColorReg" stylesheets="@login.css">
          <left>
-            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="583.0" prefWidth="188.0" styleClass="backgroundColorLeft" stylesheets="@login.css" BorderPane.alignment="CENTER">
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="583.0" prefWidth="194.0" styleClass="backgroundColorLeft" stylesheets="@login.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="23.0" layoutY="36.0" mnemonicParsing="false" onAction="#Approve" prefHeight="33.0" prefWidth="137.0" styleClass="loginBtn" stylesheets="@login.css" text="Approve Entry">
+                  <Button layoutX="23.0" layoutY="36.0" mnemonicParsing="false" onAction="#Approve" prefHeight="42.0" prefWidth="144.0" styleClass="loginBtn" stylesheets="@login.css" text="Approve Entry">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="23.0" layoutY="91.0" mnemonicParsing="false" onAction="#studentShow" prefHeight="33.0" prefWidth="137.0" styleClass="loginBtn" stylesheets="@login.css" text="Student Info">
+                  <Button layoutX="23.0" layoutY="99.0" mnemonicParsing="false" onAction="#studentShow" prefHeight="43.0" prefWidth="142.0" styleClass="loginBtn" stylesheets="@login.css" text="Student Info">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="26.0" layoutY="521.0" mnemonicParsing="false" onAction="#BackToAdmin" prefHeight="33.0" prefWidth="137.0" styleClass="loginBtn" stylesheets="@login.css" text="Back to admin">
+                  <Button layoutX="27.0" layoutY="514.0" mnemonicParsing="false" onAction="#BackToAdmin" prefHeight="43.0" prefWidth="141.0" styleClass="loginBtn" stylesheets="@login.css" text="Back to admin">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>

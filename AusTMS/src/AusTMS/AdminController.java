@@ -51,11 +51,16 @@ public class AdminController implements Initializable {
     }
     @FXML
     void InsideFaculty(ActionEvent event) {
-        System.out.println("Faculty Clicked");
-        FxmlLoader loader = new FxmlLoader();
-        Pane view = loader.getPage("AdminFaculty");
-        mainPane.setLeft(view);
-        
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminFaculty.fxml"));
+            root = loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     @FXML
     void InsideStd(ActionEvent event) {

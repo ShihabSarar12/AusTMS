@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="558.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.AdminController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.AdminFacultyController">
    <children>
-      <Label layoutX="104.0" layoutY="165.0" prefHeight="17.0" prefWidth="175.0" text="faculty" />
+      <BorderPane fx:id="mainPane" layoutY="22.0" prefHeight="583.0" prefWidth="762.0" styleClass="backgroundColorReg" stylesheets="@login.css">
+         <left>
+            <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="583.0" prefWidth="194.0" styleClass="backgroundColorLeft" stylesheets="@login.css" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="21.0" layoutY="36.0" mnemonicParsing="false" onAction="#Entry" prefHeight="43.0" prefWidth="148.0" styleClass="loginBtn" stylesheets="@login.css" text="Info Entry">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="23.0" layoutY="508.0" mnemonicParsing="false" onAction="#BackToAdmin" prefHeight="43.0" prefWidth="148.0" styleClass="loginBtn" stylesheets="@login.css" text="Back to admin">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="23.0" layoutY="105.0" mnemonicParsing="false" onAction="#DeleteUser" prefHeight="43.0" prefWidth="148.0" styleClass="loginBtn" stylesheets="@login.css" text="Delete User">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="23.0" layoutY="171.0" mnemonicParsing="false" onAction="#Feedback" prefHeight="43.0" prefWidth="148.0" styleClass="loginBtn" stylesheets="@login.css" text="Feedback">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </left>
+      </BorderPane>
+      <AnchorPane layoutY="-2.0" prefHeight="29.0" prefWidth="760.0" styleClass="topbar" stylesheets="@login.css">
+         <children>
+            <MenuBar layoutX="61.0" layoutY="2.0" prefHeight="25.0" prefWidth="686.0" styleClass="topbar" stylesheets="@login.css" />
+            <Button contentDisplay="RIGHT" layoutX="731.0" layoutY="1.0" mnemonicParsing="false" onAction="#Close" prefHeight="10.0" prefWidth="30.0" styleClass="buttonClose" stylesheets="@login.css" text="X" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutY="1.0" mnemonicParsing="false" onAction="#BackToLogin" prefHeight="25.0" prefWidth="65.0" styleClass="BackBtn" stylesheets="@login.css" text="Log out" textFill="WHITE" />
+            <Line endX="480.33331298828125" endY="1.9073486328125E-6" layoutX="280.0" layoutY="29.0" startX="-280.33331298828125" startY="1.9073486328125E-6" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
