@@ -24,12 +24,12 @@
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="23.0" layoutY="105.0" mnemonicParsing="false" onAction="#DeleteUser" prefHeight="43.0" prefWidth="148.0" styleClass="loginBtn" stylesheets="@login.css" text="Delete User">
+                  <Button layoutX="23.0" layoutY="170.0" mnemonicParsing="false" onAction="#Feedback" prefHeight="43.0" prefWidth="148.0" styleClass="loginBtn" stylesheets="@login.css" text="Feedback">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>
                   </Button>
-                  <Button layoutX="23.0" layoutY="171.0" mnemonicParsing="false" onAction="#Feedback" prefHeight="43.0" prefWidth="148.0" styleClass="loginBtn" stylesheets="@login.css" text="Feedback">
+                  <Button layoutX="23.0" layoutY="102.0" mnemonicParsing="false" onAction="#FacultyDetails" prefHeight="43.0" prefWidth="148.0" styleClass="loginBtn" stylesheets="@login.css" text="Faculty Info">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>

@@ -111,10 +111,6 @@ public class AdminFacultyController implements Initializable {
         stage.show();
     }
     @FXML
-    private void DeleteUser(ActionEvent event) {
-        
-    }
-    @FXML
     private void Feedback(ActionEvent event) {
         
     }
@@ -127,6 +123,19 @@ public class AdminFacultyController implements Initializable {
     private void BackToLogin(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            root = loader.load();
+        } catch (IOException ex) {
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void FacultyDetails(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminFacultyInfo.fxml"));
             root = loader.load();
         } catch (IOException ex) {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);

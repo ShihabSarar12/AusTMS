@@ -12,6 +12,13 @@ public class UserID {
     private static String graphLink;
     private static String linkedListLink;
     private static String studentID;
+    private static String facultyID;
+    public static String getFacultyID(){
+        return facultyID;
+    }
+    public static void setFacultyID(String facultyID){
+        UserID.facultyID = facultyID;
+    }
     public static String getStudentID(){
         return studentID;
     }
