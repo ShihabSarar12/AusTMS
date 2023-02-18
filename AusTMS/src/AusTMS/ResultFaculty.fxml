@@ -11,57 +11,57 @@
 
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.ResultFacultyController">
    <children>
-      <Label layoutX="66.0" layoutY="118.0" text="CSE-2103 : " textFill="WHITE">
+      <Label layoutX="66.0" layoutY="118.0" text="CSE-2103 : ">
          <font>
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="153.0" text="CSE-2105 : " textFill="WHITE">
+      <Label layoutX="66.0" layoutY="153.0" text="CSE-2105 : ">
          <font>
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="184.0" text="EEE-2141 : " textFill="WHITE">
+      <Label layoutX="66.0" layoutY="184.0" text="EEE-2141 : ">
          <font>
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="64.0" layoutY="223.0" text="MATH-2101 :" textFill="WHITE">
+      <Label layoutX="64.0" layoutY="223.0" text="MATH-2101 :">
          <font>
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="256.0" text="HUM-2109 :" textFill="WHITE">
+      <Label layoutX="66.0" layoutY="256.0" text="HUM-2109 :">
          <font>
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="64.0" layoutY="292.0" text="CSE-2104 : " textFill="WHITE">
+      <Label layoutX="64.0" layoutY="292.0" text="CSE-2104 : ">
          <font>
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="65.0" layoutY="328.0" text="CSE-2100 : " textFill="WHITE">
+      <Label layoutX="65.0" layoutY="328.0" text="CSE-2100 : ">
          <font>
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="67.0" layoutY="361.0" text="EEE-2142 :" textFill="WHITE">
+      <Label layoutX="67.0" layoutY="361.0" text="EEE-2142 :">
          <font>
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="396.0" text="CSE-2106 : " textFill="WHITE">
+      <Label layoutX="66.0" layoutY="396.0" text="CSE-2106 : ">
          <font>
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="68.0" layoutY="467.0" text="Total CGPA :  " textFill="WHITE">
+      <Label layoutX="68.0" layoutY="467.0" text="Total CGPA :  ">
          <font>
             <Font name="Berlin Sans FB" size="16.0" />
          </font>
       </Label>
-      <Line endX="405.0" layoutX="115.0" layoutY="453.0" startX="-100.0" stroke="#b5a9a9" />
+      <Line endX="405.0" layoutX="115.0" layoutY="453.0" startX="-100.0" />
       <VBox layoutX="371.0" layoutY="104.0" prefHeight="321.0" prefWidth="82.0">
          <children>
             <TextField fx:id="txtm1" alignment="CENTER" prefHeight="25.0" prefWidth="79.0" promptText="CGPA">
@@ -143,7 +143,7 @@
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="170.0" layoutY="34.0" text="StudentID:" textFill="WHITE">
+      <Label layoutX="162.0" layoutY="35.0" text="StudentID:">
          <font>
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
@@ -153,17 +153,17 @@
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="btn" layoutX="359.0" layoutY="509.0" mnemonicParsing="false" onAction="#Submit" prefHeight="34.0" prefWidth="70.0" styleClass="loginBtn" stylesheets="@login.css" text="Submit">
+      <Button fx:id="btn" layoutX="359.0" layoutY="509.0" mnemonicParsing="false" onAction="#Submit" prefHeight="34.0" prefWidth="70.0" styleClass="regBtn" stylesheets="@login.css" text="Submit" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="calbtn" layoutX="230.0" layoutY="509.0" mnemonicParsing="false" onAction="#Cal" prefHeight="34.0" prefWidth="78.0" styleClass="loginBtn" stylesheets="@login.css" text="Calculate">
+      <Button fx:id="calbtn" layoutX="230.0" layoutY="509.0" mnemonicParsing="false" onAction="#Cal" prefHeight="34.0" prefWidth="78.0" styleClass="regBtn" stylesheets="@login.css" text="Calculate" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
       </Button>
-      <Button fx:id="clearbtn" layoutX="115.0" layoutY="509.0" mnemonicParsing="false" onAction="#Clear" prefHeight="34.0" prefWidth="62.0" styleClass="loginBtn" stylesheets="@login.css" text="Clear">
+      <Button fx:id="clearbtn" layoutX="115.0" layoutY="509.0" mnemonicParsing="false" onAction="#Clear" prefHeight="34.0" prefWidth="62.0" styleClass="regBtn" stylesheets="@login.css" text="Clear" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />
          </font>

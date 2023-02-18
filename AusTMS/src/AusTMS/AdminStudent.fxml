@@ -29,6 +29,11 @@
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>
                   </Button>
+                  <Button layoutX="23.0" layoutY="162.0" mnemonicParsing="false" onAction="#ResultPublish" prefHeight="43.0" prefWidth="142.0" styleClass="loginBtn" stylesheets="@login.css" text="Publish Result">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </left>

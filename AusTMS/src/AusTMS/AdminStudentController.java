@@ -113,9 +113,16 @@ public class AdminStudentController implements Initializable {
     }
     @FXML
     private void Dragged(MouseEvent event) {
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage)anchorPane.getScene().getWindow();
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
+    }
+    @FXML
+    void ResultPublish(ActionEvent event) {
+        System.out.println("Inside Admin Result");
+        FxmlLoader loader = new FxmlLoader();
+        Pane view = loader.getPage("ResultFaculty");
+        mainPane.setCenter(view);
     }
     @FXML
     private void Pressed(MouseEvent event) {

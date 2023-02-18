@@ -82,13 +82,6 @@ public class MainPageFacultyController implements Initializable {
         stage.show();
     }
     @FXML
-    void Result(ActionEvent event) {
-        System.out.println("Inside Result System");
-        FxmlLoader loader = new FxmlLoader();
-        Pane view = loader.getPage("ResultFaculty");
-        mainPane.setCenter(view);
-    }
-    @FXML
     public void SendMessage(ActionEvent event) {
         System.out.println("Sending Message");
         String message = chatTxtField.getText();
