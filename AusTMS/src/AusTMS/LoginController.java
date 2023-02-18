@@ -31,7 +31,7 @@ import javafx.util.Duration;
 
 public class LoginController implements Initializable {
     @FXML
-    private BorderPane mainPane;
+    public BorderPane mainPane;
     @FXML
     private PasswordField passField;
     @FXML
@@ -103,30 +103,6 @@ public class LoginController implements Initializable {
     public void Pressed(MouseEvent event) {
         x = event.getSceneX();
         y = event.getSceneY();
-    }
-    @FXML
-    void StudentLoggedIn(ActionEvent event) {
-        System.out.println("Log In Clicked(Student)");
-        boolean verified = false;
-        String userId = txtField.getText();
-        String password = passField.getText();
-        verified = LoginVerification.studentLoginVerify(userId, password);
-        System.out.println(verified);
-        if(verified){
-            try {
-                UserID.setUserID(userId);
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("MainPageStudent.fxml"));
-                root = loader.load();
-            } catch (IOException ex) {
-                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }else{
-            passLabel.setText("UserID and Password doesn't match!!");
-        }
     }
     @FXML
     void FacultyLoggedIn(ActionEvent event) {

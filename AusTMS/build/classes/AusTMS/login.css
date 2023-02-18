@@ -5,6 +5,21 @@
 .backgroundColorLeft {
     -fx-background-color: linear-gradient(to top, #242323, #4d4b4b);
 }
+.forgotBtn{
+    -fx-background-color: transparent;
+}
+.forgotBtn:hover{
+    -fx-background-color: #383636;
+    -fx-border-radius: 30 30 30 30;
+    -fx-background-radius: 30 30 30 30;
+    -fx-border-color: #ffffff;
+}
+.forgotBtn:pressed{
+    -fx-background-color: transparent;
+    -fx-border-radius: 15 15 15 15;
+    -fx-background-radius: 15 15 15 15;
+    -fx-border-color: #ffffff;
+}
 .webBtn{
     -fx-background-color: #ff8531;
     -fx-border-radius: 0 30 30 0;

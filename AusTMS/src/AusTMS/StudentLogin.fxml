@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="545.0" styleClass="studentLogin" stylesheets="@login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.LoginController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="545.0" styleClass="studentLogin" stylesheets="@login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.StudentLoginController">
    <children>
       <TextField fx:id="txtField" alignment="CENTER" layoutX="141.0" layoutY="257.0" prefHeight="25.0" prefWidth="264.0" promptText="Enter User ID" style="-fx-background-radius: 15;" />
       <PasswordField fx:id="passField" alignment="CENTER" layoutX="141.0" layoutY="321.0" prefHeight="25.0" prefWidth="264.0" promptText="Enter Your Password" style="-fx-background-radius: 15;" />
@@ -23,7 +23,7 @@
             <Font name="Berlin Sans FB" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="225.0" layoutY="375.0" mnemonicParsing="false" onAction="#StudentLoggedIn" prefHeight="36.0" prefWidth="95.0" styleClass="studentLoginBtn" stylesheets="@login.css" text="Login">
+      <Button layoutX="226.0" layoutY="393.0" mnemonicParsing="false" onAction="#StudentLoggedIn" prefHeight="36.0" prefWidth="95.0" styleClass="studentLoginBtn" stylesheets="@login.css" text="Login">
          <font>
             <Font name="Berlin Sans FB" size="18.0" />
          </font></Button>
@@ -37,5 +37,6 @@
             <Image url="@1.jpg" />
          </image>
       </ImageView>
+      <Button layoutX="141.0" layoutY="350.0" mnemonicParsing="false" onAction="#forgotPassword" styleClass="forgotBtn" stylesheets="@login.css" text="Forgot Password" textFill="WHITE" />
    </children>
 </AnchorPane>
