@@ -33,6 +33,8 @@ public class AdminStudentController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
     @FXML
+    private AnchorPane mainAnchorPane;
+    @FXML
     private BorderPane mainPane;
     @FXML
     private TextField IdTxt;
@@ -112,8 +114,8 @@ public class AdminStudentController implements Initializable {
         stage.show();
     }
     @FXML
-    private void Dragged(MouseEvent event) {
-        stage = (Stage)anchorPane.getScene().getWindow();
+    private void DraggedAdmin(MouseEvent event) {
+        stage = (Stage)mainAnchorPane.getScene().getWindow();
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
     }
