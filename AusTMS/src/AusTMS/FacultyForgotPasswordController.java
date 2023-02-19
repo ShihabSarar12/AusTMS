@@ -28,6 +28,8 @@ public class FacultyForgotPasswordController implements Initializable {
     @FXML
     private Label ChangedLabel;
     @FXML
+    private Label changedLabel;
+    @FXML
     private TextField IdTxt;
     @FXML
     private AnchorPane anchorPane;
@@ -128,6 +130,7 @@ public class FacultyForgotPasswordController implements Initializable {
                 statement.setString(2,UserID.getStudentID());
                 int row = statement.executeUpdate();
                 System.out.println(row +" Added Successfully");
+                changedLabel.setText("Changed Successfully");
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(StudentForgotPasswordController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (SQLException ex) {

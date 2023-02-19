@@ -116,10 +116,17 @@ public class MainPageFacultyController implements Initializable {
     }
     @FXML
     void StudentInfoFac(ActionEvent event) {
-        System.out.println("Inside Student Find");
-        FxmlLoader loader = new FxmlLoader();
-        Pane view = loader.getPage("StudentFind");
-        mainPane.setCenter(view);
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminStudentInfo.fxml"));
+            root = loader.load();
+            UserID.setFxmlChanged("MainPageFaculty.fxml");
+        } catch (IOException ex) {
+            Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     
 }

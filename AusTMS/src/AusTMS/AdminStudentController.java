@@ -1,4 +1,3 @@
-
 package AusTMS;
 
 import java.io.IOException;
@@ -30,6 +29,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class AdminStudentController implements Initializable {
+
     @FXML
     private AnchorPane anchorPane;
     @FXML
@@ -52,10 +52,12 @@ public class AdminStudentController implements Initializable {
     private Scene scene;
     private double x = 0;
     private double y = 0;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+
     }
+
     @FXML
     private void BackToAdmin(ActionEvent event) {
         try {
@@ -64,11 +66,12 @@ public class AdminStudentController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
     @FXML
     void BackToFaculty(ActionEvent event) {
         try {
@@ -77,16 +80,18 @@ public class AdminStudentController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
     @FXML
     private void Close(ActionEvent event) {
-        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         stage.close();
     }
+
     @FXML
     void Approve(ActionEvent event) {
         try {
@@ -95,11 +100,12 @@ public class AdminStudentController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
     @FXML
     private void BackToLogin(ActionEvent event) {
         try {
@@ -108,17 +114,19 @@ public class AdminStudentController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
+
     @FXML
     private void DraggedAdmin(MouseEvent event) {
-        stage = (Stage)mainAnchorPane.getScene().getWindow();
+        stage = (Stage) mainAnchorPane.getScene().getWindow();
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
     }
+
     @FXML
     void ResultPublish(ActionEvent event) {
         System.out.println("Inside Admin Result");
@@ -126,20 +134,31 @@ public class AdminStudentController implements Initializable {
         Pane view = loader.getPage("ResultFaculty");
         mainPane.setCenter(view);
     }
+
+    @FXML
+    void routineAd(ActionEvent event) {
+        System.out.println("Inside admin routine System");
+        FxmlLoader loader = new FxmlLoader();
+        Pane view = loader.getPage("RoutineAdmin");
+        mainPane.setCenter(view);
+    }
+
     @FXML
     private void Pressed(MouseEvent event) {
         x = event.getSceneX();
         y = event.getSceneY();
     }
+
     @FXML
     private void studentShow(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminStudentInfo.fxml"));
             root = loader.load();
+            UserID.setFxmlChanged("AdminStudent.fxml");
         } catch (IOException ex) {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();

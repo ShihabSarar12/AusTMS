@@ -33,6 +33,10 @@ public class LoginController implements Initializable {
     @FXML
     public BorderPane mainPane;
     @FXML
+    private Label exceptionLabelFac;
+    @FXML
+    private Label exceptionLabelAd;
+    @FXML
     private PasswordField passField;
     @FXML
     private Label passLabel;
@@ -66,8 +70,18 @@ public class LoginController implements Initializable {
     void AdminPanel(ActionEvent event) {
         System.out.println("Log In Clicked(Admin)");
         boolean verified = false;
+        boolean exception = false;
         String userId = txtField.getText();
         String password = passField.getText();
+        try{
+            int uid = Integer.parseInt(userId);
+        }catch(NumberFormatException ex){
+            exceptionLabelAd.setText("and UserID can't contain letters");
+            exception = true;
+        }
+        if(!exception){
+            exceptionLabelAd.setText("");
+        }
         verified = LoginVerification.adminLoginVerify(userId, password);
         System.out.println(verified);
         if(verified){
@@ -108,8 +122,18 @@ public class LoginController implements Initializable {
     void FacultyLoggedIn(ActionEvent event) {
         System.out.println("Log In Clicked(Faculty)");
         boolean verified = false;
+        boolean exception = false;
         String userId = txtField.getText();
         String password = passField.getText();
+        try{
+            int uid = Integer.parseInt(userId);
+        }catch(NumberFormatException ex){
+            exceptionLabelFac.setText("and UserID can't contain letters");
+            exception = true;
+        }
+        if(!exception){
+            exceptionLabelFac.setText("");
+        }
         verified = LoginVerification.facultyLoginVerify(userId, password);
         System.out.println(verified);
         if(verified){

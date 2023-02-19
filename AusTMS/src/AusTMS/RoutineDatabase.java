@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
 import java.sql.*;
 
 public class RoutineDatabase {
+   
+    
     public static Connection ConnectDb()
     {
         try {
@@ -33,7 +35,7 @@ public class RoutineDatabase {
                 ResultSet rs=ps.executeQuery();
                 while(rs.next())
                 {
-                    list.add(new Routineinfrm(rs.getString("Time1"),rs.getString("Time2"),rs.getString("Time3")));
+                    list.add(new Routineinfrm(rs.getString("Time1"),rs.getString("Time2"),rs.getString("Time3"),rs.getString("day")));
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(RoutineDatabase.class.getName()).log(Level.SEVERE, null, ex);

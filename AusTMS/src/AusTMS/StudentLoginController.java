@@ -27,6 +27,8 @@ public class StudentLoginController implements Initializable {
     @FXML
     private PasswordField passField;
     @FXML
+    private Label exceptionLabelStu;
+    @FXML
     private Label passLabel;
     private Parent root;
     private Scene scene;
@@ -40,8 +42,18 @@ public class StudentLoginController implements Initializable {
     void StudentLoggedIn(ActionEvent event) {
         System.out.println("Log In Clicked(Student)");
         boolean verified = false;
+        boolean exception = false;
         String userId = txtField.getText();
         String password = passField.getText();
+        try{
+            double uid = Double.parseDouble(userId);
+        }catch(NumberFormatException ex){
+            exceptionLabelStu.setText("and UserID can't contain letters");
+            exception = true;
+        }
+        if(!exception){
+            exceptionLabelStu.setText("");
+        }
         verified = LoginVerification.studentLoginVerify(userId, password);
         System.out.println(verified);
         if(verified){

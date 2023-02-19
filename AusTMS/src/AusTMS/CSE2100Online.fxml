@@ -42,7 +42,7 @@
                   <Line endX="650.0" layoutX="122.0" startX="-108.0" stroke="#575656" />
                </children>
             </Pane>
-            <Button layoutX="422.0" layoutY="498.0" mnemonicParsing="false" onAction="#Submit" prefHeight="35.0" prefWidth="106.0" styleClass="regBtn" stylesheets="@login.css" text="Submit" textFill="#ff8531">
+            <Button layoutX="422.0" layoutY="518.0" mnemonicParsing="false" onAction="#Submit" prefHeight="35.0" prefWidth="106.0" styleClass="regBtn" stylesheets="@login.css" text="Submit" textFill="#ff8531">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
@@ -63,6 +63,11 @@
                </image>
             </ImageView>
             <TextArea fx:id="codeTxt" layoutX="229.0" layoutY="183.0" prefHeight="300.0" prefWidth="492.0" />
+            <Label fx:id="submitLabel" layoutX="405.0" layoutY="489.0">
+               <font>
+                  <Font name="Berlin Sans FB" size="15.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

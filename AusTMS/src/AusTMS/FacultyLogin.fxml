@@ -38,5 +38,10 @@
          </image>
       </ImageView>
       <Button layoutX="141.0" layoutY="350.0" mnemonicParsing="false" onAction="#forgotPasswordFaculty" styleClass="forgotBtn" stylesheets="@login.css" text="Forgot Password" textFill="WHITE" />
+      <Label fx:id="exceptionLabelFac" layoutX="176.0" layoutY="479.0" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

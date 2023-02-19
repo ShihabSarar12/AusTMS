@@ -32,11 +32,16 @@
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="197.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="230.0" fitWidth="183.0" layoutX="182.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@1.jpg" />
+            <Image url="@std-login-removebg.jpg" />
          </image>
       </ImageView>
       <Button layoutX="141.0" layoutY="350.0" mnemonicParsing="false" onAction="#forgotPassword" styleClass="forgotBtn" stylesheets="@login.css" text="Forgot Password" textFill="WHITE" />
+      <Label fx:id="exceptionLabelStu" layoutX="176.0" layoutY="479.0" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

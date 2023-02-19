@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -15,24 +17,20 @@
          <left>
             <Pane prefHeight="577.0" prefWidth="169.0" styleClass="FacultyMainPageLeft" stylesheets="@login.css" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="9.0" layoutY="188.0" mnemonicParsing="false" onAction="#NoticeFaculty" prefHeight="43.0" prefWidth="151.0" styleClass="loginBtn" stylesheets="@login.css" text="Notice">
+                  <Button layoutX="9.0" layoutY="158.0" mnemonicParsing="false" onAction="#NoticeFaculty" prefHeight="43.0" prefWidth="151.0" styleClass="loginBtn" stylesheets="@login.css" text="Notice">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font></Button>
-                  <Button layoutX="9.0" layoutY="245.0" mnemonicParsing="false" onAction="#Course" prefHeight="43.0" prefWidth="152.0" styleClass="loginBtn" stylesheets="@login.css" text="Courses">
+                  <Button layoutX="9.0" layoutY="215.0" mnemonicParsing="false" onAction="#Course" prefHeight="43.0" prefWidth="152.0" styleClass="loginBtn" stylesheets="@login.css" text="Courses">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font></Button>
                   <Line endX="62.0" endY="564.0" layoutX="107.0" layoutY="14.0" startX="62.0" startY="-14.0" />
-                  <Button layoutX="10.0" layoutY="135.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="150.0" styleClass="loginBtn" stylesheets="@login.css" text="Routine">
+                  <Button layoutX="9.0" layoutY="272.0" mnemonicParsing="false" onAction="#ChatSystem" prefHeight="43.0" prefWidth="151.0" styleClass="loginBtn" text="Chat">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font></Button>
-                  <Button layoutX="9.0" layoutY="302.0" mnemonicParsing="false" onAction="#ChatSystem" prefHeight="43.0" prefWidth="151.0" styleClass="loginBtn" text="Chat">
-                     <font>
-                        <Font name="Berlin Sans FB" size="18.0" />
-                     </font></Button>
-                  <Button layoutX="10.0" layoutY="357.0" mnemonicParsing="false" onAction="#StudentInfoFac" prefHeight="43.0" prefWidth="150.0" styleClass="loginBtn" text="Student Info">
+                  <Button layoutX="10.0" layoutY="327.0" mnemonicParsing="false" onAction="#StudentInfoFac" prefHeight="43.0" prefWidth="150.0" styleClass="loginBtn" text="Student Info">
                      <font>
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>
@@ -43,6 +41,13 @@
                </BorderPane.margin>
             </Pane>
          </left>
+         <center>
+            <ImageView fitHeight="360.0" fitWidth="312.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@WhatsApp_Image_2023-02-20_at_2.39.jpg" />
+               </image>
+            </ImageView>
+         </center>
       </BorderPane>
       <AnchorPane layoutY="1.0" prefHeight="25.0" prefWidth="750.0" styleClass="topbar" stylesheets="@login.css">
          <children>

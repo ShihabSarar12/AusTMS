@@ -61,11 +61,30 @@ public class AdminFacultyController implements Initializable {
     }
     @FXML
     void ApproveEntry(ActionEvent event) {
+        boolean exception = false;
         String sql = "INSERT INTO faculty (Faculty_ID, Name, Email, Password) VALUES (?, ?, ?, ?)";
         String uID = IdTxt.getText();
         String name = nameTxt.getText();
         String email = emailTxt.getText();
         String password = passwordTxt.getText();
+        try{
+            int id = Integer.parseInt(uID);
+            if(name.matches(".*[0-9].*")){
+                throw new CustomException("Name can't contain numbers");
+            }
+            if(!email.endsWith("@aust.edu")){
+                throw new CustomEmailException("Email is not valid");
+            }
+        }catch(NumberFormatException ex){
+            matchLabel.setText("UserID can't contain letters");
+            exception = true;
+        }catch(CustomException ex){
+            matchLabel.setText("Name can't contain numbers");
+            exception = true;
+        }catch(CustomEmailException ex){
+            matchLabel.setText("Email is not valid");
+            exception = true;
+        }
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root",""); 
@@ -74,10 +93,12 @@ public class AdminFacultyController implements Initializable {
             statement.setString(2, name);
             statement.setString(3, email);
             statement.setString(4, password);
-            int row = statement.executeUpdate();
-            System.out.println(row+" inserted successfully!");
-            System.out.println("Information Saved");
-            matchLabel.setText("Saved successfully");
+            if(!exception){
+                int row = statement.executeUpdate();
+                System.out.println(row+" inserted successfully!");
+                System.out.println("Information Saved");
+                matchLabel.setText("Saved successfully");
+            }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(NewRegistrationController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {

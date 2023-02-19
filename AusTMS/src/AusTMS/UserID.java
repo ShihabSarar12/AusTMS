@@ -13,6 +13,20 @@ public class UserID {
     private static String linkedListLink;
     private static String studentID;
     private static String facultyID;
+    private static String fileName;
+    private static String fxmlChanged;
+    public static String getFxmlChanged(){
+        return fxmlChanged;
+    }
+    public static void setFxmlChanged(String fxmlChanged){
+        UserID.fxmlChanged = fxmlChanged;
+    }
+    public static String getFileName(){
+        return fileName;
+    }
+    public static void setFileName(String fileName){
+        UserID.fileName = fileName;
+    }
     public static String getFacultyID(){
         return facultyID;
     }

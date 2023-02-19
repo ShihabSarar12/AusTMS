@@ -77,18 +77,16 @@ public class AdminStudentInfoController implements Initializable {
                 stage.show();
             }
         });
-    }    
-
+    }
     @FXML
     private void Close(ActionEvent event) {
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
         stage.close();
     }
-
     @FXML
     private void BackToStudent(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("AdminStudent.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(UserID.getFxmlChanged()));
             root = loader.load();
         } catch (IOException ex) {
             Logger.getLogger(AdminController.class.getName()).log(Level.SEVERE, null, ex);
@@ -98,14 +96,12 @@ public class AdminStudentInfoController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
     @FXML
     private void Dragged(MouseEvent event) {
         stage = (Stage)anchorPane.getScene().getWindow();
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
     }
-
     @FXML
     private void Pressed(MouseEvent event) {
         x = event.getSceneX();

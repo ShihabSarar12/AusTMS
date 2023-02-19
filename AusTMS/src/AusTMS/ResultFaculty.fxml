@@ -138,7 +138,7 @@
             </TextField>
          </children>
       </VBox>
-      <Label fx:id="txtavg" alignment="CENTER" layoutX="373.0" layoutY="460.0" prefHeight="26.0" prefWidth="82.0" textFill="WHITE">
+      <Label fx:id="txtavg" alignment="CENTER" layoutX="373.0" layoutY="460.0" prefHeight="26.0" prefWidth="82.0">
          <font>
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
@@ -168,5 +168,10 @@
             <Font name="Berlin Sans FB" size="14.0" />
          </font>
       </Button>
+      <Label fx:id="exceptionLabel" layoutX="190.0" layoutY="428.0">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -99,11 +99,11 @@ public class AdminApprovalDetailsController implements Initializable {
             statement.setString(1,UserID.getStudentID());
             row = statement.executeUpdate();
             System.out.println(row+" row Deleted Successfully");
-            String dropSql = "ALTER TABLE pending_approval\n DROP id";
+            String dropSql = "ALTER TABLE student\n DROP id";
             statement = connect.prepareStatement(dropSql);
             boolean done = statement.execute();
             System.out.println(done);
-            String addSql = "ALTER TABLE pending_approval\n ADD id MEDIUMINT NOT NULL AUTO_INCREMENT Primary Key";
+            String addSql = "ALTER TABLE student\n ADD id MEDIUMINT NOT NULL AUTO_INCREMENT Primary Key";
             statement = connect.prepareStatement(addSql);
             done = statement.execute();
             System.out.println(done);

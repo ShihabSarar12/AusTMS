@@ -18,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -35,6 +36,8 @@ public class FacultyEvalController implements Initializable {
     private TextField fileNameTxt;
     @FXML
     private TextArea codeFacTxt;
+    @FXML
+    private Label submitLabel;
     private Parent root;
     private Stage stage;
     private Scene scene;
@@ -42,18 +45,18 @@ public class FacultyEvalController implements Initializable {
     private double y = 0;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        String Id = UserID.getStudentID();
-        IdTxt.setText(Id);
-        String sql = "SELECT * FROM online WHERE Student_ID= ?";
+        String fileName = UserID.getFileName();
+        String sql = "SELECT * FROM online WHERE File_Name= ?";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root","");
             System.out.println("Connection received!");
             PreparedStatement statement = connect.prepareStatement(sql);
-            statement.setString(1, Id);
+            statement.setString(1, fileName);
             ResultSet result = statement.executeQuery();
             if(result.next()){
-                fileNameTxt.setText(result.getString("File_Name"));
+                fileNameTxt.setText(fileName);
+                IdTxt.setText(result.getString("Student_ID"));
                 codeFacTxt.setText(result.getString("Code"));
             }
             else{
@@ -88,17 +91,27 @@ public class FacultyEvalController implements Initializable {
 
     @FXML
     private void SubmitNumber(ActionEvent event) {
+        String searchSql = "SELECT * FROM result WHERE Student_ID=?";
         String sql = "UPDATE result SET Online=? WHERE Student_ID=?";
         String number = numberTxt.getText();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root","");
             System.out.println("Connection received");
-            PreparedStatement statement = connect.prepareStatement(sql);
-            statement.setString(1, number);
-            statement.setString(2, IdTxt.getText());
-            int row = statement.executeUpdate();
-            System.out.println(row+" row affected");
+            PreparedStatement statement = connect.prepareStatement(searchSql);
+            statement.setString(1,IdTxt.getText());
+            ResultSet result = statement.executeQuery();
+            if(result.next()){
+                statement = connect.prepareStatement(sql);
+                statement.setString(1, number);
+                statement.setString(2, IdTxt.getText());
+                int row = statement.executeUpdate();
+                System.out.println(row+" row affected");
+                submitLabel.setText("Submitted Successfully");
+            }
+            else{
+                submitLabel.setText("Haven't published result yet");
+            }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(FacultyEvalController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {

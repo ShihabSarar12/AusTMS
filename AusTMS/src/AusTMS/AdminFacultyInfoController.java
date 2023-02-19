@@ -29,7 +29,6 @@ import javafx.stage.Stage;
 public class AdminFacultyInfoController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
-
     @FXML
     private ListView<String> listView;
     private Parent root;
@@ -43,7 +42,16 @@ public class AdminFacultyInfoController implements Initializable {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root","");
-            PreparedStatement statement = connect.prepareStatement(sql);
+            String dropSql = "ALTER TABLE faculty\n DROP id";
+            PreparedStatement statement = connect.prepareStatement(dropSql);
+            boolean done = statement.execute();
+            System.out.println(done);
+            String addSql = "ALTER TABLE faculty\n ADD id MEDIUMINT NOT NULL AUTO_INCREMENT Primary Key";
+            statement = connect.prepareStatement(addSql);
+            done = statement.execute();
+            System.out.println(done);
+            System.out.println("Successfully id resolved");
+            statement = connect.prepareStatement(sql);
             for(Integer i=1; ;i++){
                 statement.setString(1,i.toString());
                 ResultSet result = statement.executeQuery();

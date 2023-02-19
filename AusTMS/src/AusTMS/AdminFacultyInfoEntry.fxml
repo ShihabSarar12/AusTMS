@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -41,8 +42,8 @@
                   <Line endX="650.0" layoutX="122.0" startX="-108.0" stroke="#575656" />
                </children>
             </Pane>
-            <TextField fx:id="nameTxt" alignment="CENTER" layoutX="309.0" layoutY="277.0" prefHeight="25.0" prefWidth="269.0" style="-fx-background-radius: 15;" />
-            <TextField fx:id="emailTxt" alignment="CENTER" layoutX="309.0" layoutY="340.0" prefHeight="25.0" prefWidth="269.0" style="-fx-background-radius: 15;" />
+            <TextField fx:id="nameTxt" alignment="CENTER" layoutX="309.0" layoutY="277.0" prefHeight="25.0" prefWidth="269.0" promptText="Enter User Name" style="-fx-background-radius: 15;" />
+            <TextField fx:id="emailTxt" alignment="CENTER" layoutX="309.0" layoutY="340.0" prefHeight="25.0" prefWidth="269.0" promptText="Enter User Email" style="-fx-background-radius: 15;" />
             <Label layoutX="309.0" layoutY="256.0" text="Name">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
@@ -53,18 +54,17 @@
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="IdTxt" alignment="CENTER" layoutX="309.0" layoutY="214.0" prefHeight="25.0" prefWidth="269.0" style="-fx-background-radius: 15;" />
+            <TextField fx:id="IdTxt" alignment="CENTER" layoutX="309.0" layoutY="214.0" prefHeight="25.0" prefWidth="269.0" promptText="Enter User ID" style="-fx-background-radius: 15;" />
             <Label layoutX="309.0" layoutY="193.0" text="Faculty ID">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
             </Label>
-            <ImageView fitHeight="150.0" fitWidth="162.0" layoutX="370.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="168.0" fitWidth="170.0" layoutX="360.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@5.png" />
+                  <Image url="@admin-faculty-entry.jpg" />
                </image>
             </ImageView>
-            <TextField fx:id="passwordTxt" alignment="CENTER" layoutX="309.0" layoutY="398.0" prefHeight="25.0" prefWidth="269.0" style="-fx-background-radius: 15;" />
             <Label layoutX="309.0" layoutY="377.0" text="Password">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
@@ -76,6 +76,7 @@
                </font>
             </Button>
             <Label fx:id="matchLabel" layoutX="395.0" layoutY="440.0" />
+            <PasswordField alignment="CENTER" layoutX="311.0" layoutY="398.0" prefHeight="25.0" prefWidth="269.0" promptText="Enter User Password" style="-fx-background-radius: 15;" />
          </children>
       </Pane>
    </children>

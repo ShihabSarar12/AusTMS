@@ -44,7 +44,7 @@ public class StudentSubmittedController implements Initializable {
                 statement.setString(1,i.toString());
                 ResultSet result = statement.executeQuery();
                 if(result.next()){
-                    listView.getItems().add(result.getString("Student_ID"));
+                    listView.getItems().add(result.getString("File_Name"));
                 }
                 else{
                     break;
@@ -58,9 +58,9 @@ public class StudentSubmittedController implements Initializable {
         listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>(){
             @Override
             public void changed(ObservableValue<? extends String> ov, String t, String t1) {
-                String studentID = listView.getSelectionModel().getSelectedItem();
-                System.out.println("Selected ID: "+studentID);
-                UserID.setStudentID(studentID);
+                String fileName = listView.getSelectionModel().getSelectedItem();
+                System.out.println("Selected ID: "+fileName);
+                UserID.setFileName(fileName);
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("FacultyEval.fxml"));
                     root = loader.load();

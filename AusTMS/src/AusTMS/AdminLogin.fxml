@@ -32,9 +32,14 @@
             <Font name="Berlin Sans FB" size="15.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="173.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="127.0" fitWidth="124.0" layoutX="211.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@admin.png" />
+            <Image url="@adminlogin1-removebg-preview.png" />
          </image></ImageView>
+      <Label fx:id="exceptionLabelAd" layoutX="176.0" layoutY="479.0" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

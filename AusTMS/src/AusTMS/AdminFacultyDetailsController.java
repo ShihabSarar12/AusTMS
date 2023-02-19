@@ -21,6 +21,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class AdminFacultyDetailsController implements Initializable {
@@ -30,6 +31,8 @@ public class AdminFacultyDetailsController implements Initializable {
     private TextField emailTxt;
     @FXML
     private TextField nameTxt;
+    @FXML
+    private AnchorPane anchorPaneFacDetails;
     private Parent root;
     private Stage stage;
     private Scene scene;
@@ -103,7 +106,7 @@ public class AdminFacultyDetailsController implements Initializable {
     }
     @FXML
     void Dragged(MouseEvent event) {
-        stage = (Stage)((Button)event.getSource()).getScene().getWindow();
+        stage = (Stage)anchorPaneFacDetails.getScene().getWindow();
         stage.setY(event.getScreenY() - y);
         stage.setX(event.getScreenX() - x);
     }

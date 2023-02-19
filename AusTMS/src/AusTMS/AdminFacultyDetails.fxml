@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.AdminFacultyDetailsController">
+<AnchorPane fx:id="anchorPaneFacDetails" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseDragged="#Dragged" onMousePressed="#Pressed" prefHeight="600.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AusTMS.AdminFacultyDetailsController">
    <children>
       <AnchorPane layoutY="-2.0" prefHeight="29.0" prefWidth="760.0">
          <children>
@@ -54,14 +54,14 @@
                </font>
             </Label>
             <TextField fx:id="IdTxt" alignment="CENTER" editable="false" layoutX="309.0" layoutY="232.0" prefHeight="25.0" prefWidth="269.0" style="-fx-background-radius: 15;" />
-            <Label layoutX="309.0" layoutY="211.0" text="Student ID">
+            <Label layoutX="309.0" layoutY="211.0" text="Faculty ID">
                <font>
                   <Font name="Berlin Sans FB" size="18.0" />
                </font>
             </Label>
-            <ImageView fitHeight="150.0" fitWidth="162.0" layoutX="370.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="163.0" fitWidth="161.0" layoutX="363.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@5.png" />
+                  <Image url="@WhatsApp_Image_2023-02-20_at_1.27.18_AM-removebg-preview.png" />
                </image>
             </ImageView>
             <Button layoutX="405.0" layoutY="453.0" mnemonicParsing="false" onAction="#DeleteUser" prefHeight="29.0" prefWidth="87.0" styleClass="regBtn" stylesheets="@login.css" text="Delete User" textFill="WHITE" />

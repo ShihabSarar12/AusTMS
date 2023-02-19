@@ -48,7 +48,8 @@ public class ResultFacultyController implements Initializable {
     private Button clearbtn;
     @FXML
     private Button btn;
-
+    @FXML
+    private Label exceptionLabel;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -56,20 +57,28 @@ public class ResultFacultyController implements Initializable {
 
     @FXML
     void Cal(ActionEvent event) {
-        double n1, n2, n3, n4, n5, n6, n7, n8, n9;
-        n1 = Double.parseDouble(txtm1.getText());
-        n2 = Double.parseDouble(txtm2.getText());
-        n3 = Double.parseDouble(txtm3.getText());
-        n4 = Double.parseDouble(txtm4.getText());
-        n5 = Double.parseDouble(txtm5.getText());
-        n6 = Double.parseDouble(txtm6.getText());
-        n7 = Double.parseDouble(txtm7.getText());
-        n8 = Double.parseDouble(txtm8.getText());
-        n9 = Double.parseDouble(txtm9.getText());
+        boolean exception = false;
+        double n1 = 0, n2 = 0, n3 = 0, n4 = 0, n5 = 0, n6 = 0, n7 = 0, n8 = 0, n9 = 0;
+        try{
+            n1 = Double.parseDouble(txtm1.getText());
+            n2 = Double.parseDouble(txtm2.getText());
+            n3 = Double.parseDouble(txtm3.getText());
+            n4 = Double.parseDouble(txtm4.getText());
+            n5 = Double.parseDouble(txtm5.getText());
+            n6 = Double.parseDouble(txtm6.getText());
+            n7 = Double.parseDouble(txtm7.getText());
+            n8 = Double.parseDouble(txtm8.getText());
+            n9 = Double.parseDouble(txtm9.getText());
+        }catch(NumberFormatException ex){
+            exceptionLabel.setText("CGPA can't contain letters");
+            exception = true;
+        }
         double total, avg;
-        total = n1 * 3 + n2 * 3 + n3 * 3 + n4 * 3 + n5 * 3 + n6 * 1.5 + n7 * 0.75 + n8 * 1.5 + n9 * 1.5;
-        avg = (total / 20.25);
-        txtavg.setText(String.format("%.3f", avg));
+        if(!exception){
+            total = n1 * 3 + n2 * 3 + n3 * 3 + n4 * 3 + n5 * 3 + n6 * 1.5 + n7 * 0.75 + n8 * 1.5 + n9 * 1.5;
+            avg = (total / 20.25);
+            txtavg.setText(String.format("%.3f", avg));
+        }
     }
     @FXML
     void Clear(ActionEvent event) {
@@ -89,7 +98,9 @@ public class ResultFacultyController implements Initializable {
 
     @FXML
     void Submit(ActionEvent event) {
-        String sql = "INSERT INTO result (Student_ID,CSE_2103,CSE_2105,EEE_2141,MATH_2101,HUM_2109,CSE_2104,CSE_2100,EEE_2142,CSE_2106,Total_CGPA) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        boolean exception = false;
+        String SearchSql = "SELECT * from result WHERE Student_ID=?";
+        String sql = "INSERT INTO result (Student_ID,CSE_2103,CSE_2105,EEE_2141,MATH_2101,HUM_2109,CSE_2104,CSE_2100,EEE_2142,CSE_2106,Total_CGPA,Online) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
         String m1 = txtm1.getText();
         String m2 = txtm2.getText();
         String m3 = txtm3.getText();
@@ -101,30 +112,46 @@ public class ResultFacultyController implements Initializable {
         String m9 = txtm9.getText();
         String stuid = stuID.getText();
         String m10 = txtavg.getText();
+        try{
+            int id = Integer.parseInt(stuid);
+        }catch(NumberFormatException ex){
+            exceptionLabel.setText("Student ID can't contain letters");
+            exception = true;
+        }
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management", "root", "");
-            PreparedStatement statement = connect.prepareStatement(sql);
-            statement.setString(1, stuid);
-            statement.setString(2, m1);
-            statement.setString(3, m2);
-            statement.setString(4, m3);
-            statement.setString(5, m4);
-            statement.setString(6, m5);
-            statement.setString(7, m6);
-            statement.setString(8, m7);
-            statement.setString(9, m8);
-            statement.setString(10, m9);
-            statement.setString(11, m10);
-            int row = statement.executeUpdate();
-            System.out.println(row + " inserted successfully!");
-            System.out.println("Information Saved");
-
+            PreparedStatement statement = connect.prepareStatement(SearchSql);
+            statement.setString(1,stuid);
+            ResultSet result = statement.executeQuery();
+            if(!result.next()){
+                statement = connect.prepareStatement(sql);
+                statement.setString(1, stuid);
+                statement.setString(2, m1);
+                statement.setString(3, m2);
+                statement.setString(4, m3);
+                statement.setString(5, m4);
+                statement.setString(6, m5);
+                statement.setString(7, m6);
+                statement.setString(8, m7);
+                statement.setString(9, m8);
+                statement.setString(10, m9);
+                statement.setString(11, m10);
+                statement.setString(12,"0");
+                if(!exception){
+                    int row = statement.executeUpdate();
+                    System.out.println(row + " inserted successfully!");
+                    System.out.println("Information Saved");
+                }
+            }
+            else{
+                exceptionLabel.setText("Result already exists for this student");
+            }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ResultFacultyController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(ResultFacultyController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
 }
+

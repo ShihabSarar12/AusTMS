@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
@@ -34,9 +36,21 @@
                         <Font name="Berlin Sans FB" size="18.0" />
                      </font>
                   </Button>
+                  <Button layoutX="23.0" layoutY="224.0" mnemonicParsing="false" onAction="#routineAd" prefHeight="43.0" prefWidth="142.0" styleClass="loginBtn" stylesheets="@login.css" text="Edit Routine">
+                     <font>
+                        <Font name="Berlin Sans FB" size="18.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </left>
+         <center>
+            <ImageView fitHeight="497.0" fitWidth="513.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@admin-std.jpg" />
+               </image>
+            </ImageView>
+         </center>
       </BorderPane>
       <AnchorPane layoutY="-2.0" prefHeight="29.0" prefWidth="760.0" styleClass="topbar" stylesheets="@login.css">
          <children>

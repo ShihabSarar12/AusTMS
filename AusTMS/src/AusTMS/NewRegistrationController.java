@@ -67,34 +67,59 @@ public class NewRegistrationController implements Initializable {
     @FXML
     void RegSaved(ActionEvent event) {
         String sql = "INSERT INTO pending_approval (Student_ID, Name, Email, Password) VALUES (?, ?, ?, ?)";
+        boolean exception = false;
         String uID = IdTxt.getText();
         String name = nameTxt.getText();
         String email = emailTxt.getText();
         String password = passwordTxt.getText();
         String conPassword = conPasswordTxt.getText();
-        if(password.equals(conPassword)){
-            try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root",""); 
-                PreparedStatement statement = connect.prepareStatement(sql);
-                statement.setString(1,uID);
-                statement.setString(2, name);
-                statement.setString(3, email);
-                statement.setString(4, password);
-                int row = statement.executeUpdate();
-                System.out.println(row+" inserted successfully!");
-                System.out.println("Information Saved");
-                matchLabel.setText("Saved successfully");
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(NewRegistrationController.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (SQLException ex) {
-                Logger.getLogger(NewRegistrationController.class.getName()).log(Level.SEVERE, null, ex);
+        try{
+            double uid = Double.parseDouble(uID);
+        }catch(NumberFormatException ex){
+            matchLabel.setText("UserID can't contain letters");
+            exception = true;
+        }
+        try{
+            if(name.matches(".*[0-9].*")){
+                throw new CustomException("Name can't contain numbers");
+            }
+        }catch(CustomException ex){
+            matchLabel.setText("Name can't contain numbers");
+            exception = true;
+        }
+        try{
+            if(!email.endsWith("@aust.edu")){
+                throw new CustomEmailException("Email is not valid");
+            }
+        }catch(CustomEmailException ex){
+            matchLabel.setText("Email is not valid");
+            exception = true;
+        }
+        if(!exception){
+            if(password.equals(conPassword)){
+                try {
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root",""); 
+                    PreparedStatement statement = connect.prepareStatement(sql);
+                    statement.setString(1,uID);
+                    statement.setString(2, name);
+                    statement.setString(3, email);
+                    statement.setString(4, password);
+                    int row = statement.executeUpdate();
+                    System.out.println(row+" inserted successfully!");
+                    System.out.println("Information Saved");
+                    matchLabel.setText("Saved successfully");
+                    
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(NewRegistrationController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (SQLException ex) {
+                    Logger.getLogger(NewRegistrationController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            else{
+                matchLabel.setText("Password doesn't match!");
             }
         }
-        else{
-            matchLabel.setText("Password doesn't match!");
-        }
-        
     }
     @FXML
     void BackToLogin(ActionEvent event) {

@@ -33,6 +33,8 @@ public class CSE2100OnlineController implements Initializable {
     private TextArea codeTxt;
     @FXML
     private TextField fileTxt;
+    @FXML
+    private Label submitLabel;
     private double x = 0;
     private double y = 0;
     private Parent root;
@@ -73,6 +75,7 @@ public class CSE2100OnlineController implements Initializable {
     }
     @FXML
     void Submit(ActionEvent event) {
+        String searchSql = "SELECT * FROM online WHERE File_Name=?";
         String sql = "INSERT INTO online (Student_ID,File_Name,Code) VALUES (?,?,?)";
         String fileName = fileTxt.getText();
         String code = codeTxt.getText();
@@ -80,12 +83,21 @@ public class CSE2100OnlineController implements Initializable {
             Class.forName("com.mysql.cj.jdbc.Driver"); 
             Connection connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/classroom_management","root","");
             System.out.println("Connection received");
-            PreparedStatement statement = connect.prepareStatement(sql);
-            statement.setString(1, UserID.getUserID());
-            statement.setString(2, fileName);
-            statement.setString(3, code);
-            int row = statement.executeUpdate();
-            System.out.println(row+" updated successfully");
+            PreparedStatement statement = connect.prepareStatement(searchSql);
+            statement.setString(1,fileName);
+            ResultSet result = statement.executeQuery();
+            if(!result.next()){
+                statement = connect.prepareStatement(sql);
+                statement.setString(1, UserID.getUserID());
+                statement.setString(2, fileName);
+                statement.setString(3, code);
+                int row = statement.executeUpdate();
+                System.out.println(row+" updated successfully");
+                submitLabel.setText("Submitted Successfully");
+            }
+            else{
+                submitLabel.setText("Same name already exists");
+            }
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(CSE2100OnlineController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
